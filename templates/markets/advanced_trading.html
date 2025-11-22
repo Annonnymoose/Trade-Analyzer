@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Advanced Trading{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/enhanced-styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Advanced Trading Terminal</h2>
+                <div class="d-flex align-items-center gap-3">
+                    <span id="connection-status" class="badge bg-success">🟢 Live</span>
+                    <span class="market-status open">Market Open</span>
+                    <button class="btn btn-outline-primary" onclick="toggleDarkMode()">
+                        <i class="fas fa-moon"></i> Dark Mode
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Trading Panel -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card trading-card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-line text-primary"></i> Quick Trade
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form id="quickTradeForm" class="needs-validation" novalidate method="post" action="{% url 'place_order' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Symbol</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="tradeSymbol" name="symbol"
+                                       placeholder="e.g., AAPL" required autocomplete="off">
+                                <button type="button" class="btn btn-outline-secondary" 
+                                        onclick="searchSymbol()">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <div class="invalid-feedback">Please enter a valid symbol.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Order Type</label>
+                            <select class="form-select" id="orderType" name="order_type" onchange="toggleOrderFields()">
+                                <option value="market">Market Order</option>
+                                <option value="limit">Limit Order</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label">Action</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check" name="side" 
+                                           id="buyAction" value="buy" checked>
+                                    <label class="btn btn-outline-success" for="buyAction">Buy</label>
+                                    
+                                    <input type="radio" class="btn-check" name="side" 
+                                           id="sellAction" value="sell">
+                                    <label class="btn btn-outline-danger" for="sellAction">Sell</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="quantity" name="quantity"
+                                       min="1" step="1" required>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3" id="priceFields" style="display: none;">
+                            <div class="col-12">
+                                <label class="form-label">Limit Price</label>
+                                <input type="number" class="form-control" id="limitPrice" name="price"
+                                       step="0.01" min="0">
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-success btn-trade">
+                                <i class="fas fa-check"></i> Place Order
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Chart -->
+        <div class="col-lg-8 col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Price Chart</h5>
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-primary active" onclick="changeTimeframe('1D')">1D</button>
+                            <button class="btn btn-outline-primary" onclick="changeTimeframe('1W')">1W</button>
+                            <button class="btn btn-outline-primary" onclick="changeTimeframe('1M')">1M</button>
+                            <button class="btn btn-outline-primary" onclick="changeTimeframe('3M')">3M</button>
+                            <button class="btn btn-outline-primary" onclick="changeTimeframe('1Y')">1Y</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div id="tradingChart" style="height: 400px;">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                <div class="text-muted">
+                                    <i class="fas fa-chart-line fa-3x mb-3"></i>
+                                    <p>Select a symbol to view chart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Position Summary -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-briefcase text-primary"></i> Current Positions
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table data-table">
+                            <thead>
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Shares</th>
+                                    <th>Avg Cost</th>
+                                    <th>Current Price</th>
+                                    <th>Market Value</th>
+                                    <th>Gain/Loss</th>
+                                    <th>Gain/Loss %</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for position in positions %}
+                                <tr data-symbol="{{ position.symbol }}">
+                                    <td>
+                                        <strong>{{ position.symbol }}</strong>
+                                        <br><small class="text-muted">{{ position.company_name }}</small>
+                                    </td>
+                                    <td class="number">{{ position.shares }}</td>
+                                    <td class="number">${{ position.avg_cost|floatformat:2 }}</td>
+                                    <td class="price number">${{ position.current_price|floatformat:2 }}</td>
+                                    <td class="number">${{ position.market_value|floatformat:2 }}</td>
+                                    <td class="change number">
+                                        <span class="{% if position.gain_loss >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                            ${{ position.gain_loss|floatformat:2 }}
+                                        </span>
+                                    </td>
+                                    <td class="number">
+                                        <span class="{% if position.gain_loss_percent >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                            {{ position.gain_loss_percent|floatformat:2 }}%
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm">
+                                            <button class="btn btn-outline-success" 
+                                                    onclick="quickTrade('{{ position.symbol }}', 'buy')">
+                                                Buy
+                                            </button>
+                                            <button class="btn btn-outline-danger" 
+                                                    onclick="quickTrade('{{ position.symbol }}', 'sell')">
+                                                Sell
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="8" class="text-center text-muted py-4">
+                                        No positions found. Place your first trade above!
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Orders -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-list-ul text-success"></i> Recent Orders
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Symbol</th>
+                                    <th>Side</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td>{{ order.created_at|date:"M d, Y H:i" }}</td>
+                                    <td><strong>{{ order.ticker.symbol }}</strong></td>
+                                    <td>
+                                        <span class="badge bg-{% if order.side == 'buy' %}success{% else %}danger{% endif %}">
+                                            {{ order.side|upper }}
+                                        </span>
+                                    </td>
+                                    <td>{{ order.quantity }}</td>
+                                    <td>${{ order.price|floatformat:2 }}</td>
+                                    <td>${{ order.total|floatformat:2 }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="6" class="text-center text-muted py-4">
+                                        No orders found
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Advanced Trading Functions
+function toggleOrderFields() {
+    const orderType = document.getElementById('orderType').value;
+    const priceFields = document.getElementById('priceFields');
+    const limitPrice = document.getElementById('limitPrice');
+    
+    if (orderType === 'limit') {
+        priceFields.style.display = 'block';
+        limitPrice.setAttribute('required', '');
+    } else {
+        priceFields.style.display = 'none';
+        limitPrice.removeAttribute('required');
+    }
+}
+
+function quickTrade(symbol, action) {
+    document.getElementById('tradeSymbol').value = symbol;
+    document.querySelector(`#${action}Action`).checked = true;
+    document.getElementById('quantity').focus();
+}
+
+function toggleDarkMode() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    const icon = document.querySelector('.fa-moon, .fa-sun');
+    if (icon) {
+        icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
+function searchSymbol() {
+    const query = document.getElementById('tradeSymbol').value;
+    if (query.length < 2) return;
+    
+    fetch(`/api/search-stocks/?q=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            // Simple implementation - just populate with first result
+            if (data.results && data.results.length > 0) {
+                document.getElementById('tradeSymbol').value = data.results[0].symbol;
+            }
+        });
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Apply saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    
+    // Initialize order type fields
+    toggleOrderFields();
+});
+</script>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/market-websocket.js' %}"></script>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+{% endblock %}

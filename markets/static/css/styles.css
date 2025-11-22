@@ -1,0 +1,64 @@
+/* General */
+.price-up {
+    color: #26a69a;
+    font-weight: 600;
+}
+
+.price-down {
+    color: #ef5350;
+    font-weight: 600;
+}
+
+/* Charts */
+.chart-container {
+    height: 400px;
+    width: 100%;
+}
+
+#volumeChart {
+    height: 100px !important;
+}
+
+.btn-group .btn.active {
+    background-color: #2962FF;
+    color: white;
+    border-color: #2962FF;
+}
+
+/* Cards */
+.market-card {
+    transition: all 0.3s ease;
+}
+
+.market-card:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.trade-buttons {
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    background: white;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.stat-card .stat-label {
+    color: #6c757d;
+    font-size: 0.875rem;
+}

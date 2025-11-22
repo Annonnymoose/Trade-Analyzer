@@ -1,0 +1,268 @@
+{% extends 'base_modern.html' %}
+
+{% block title %}Stock Markets - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="display-6 fw-bold mb-2 text-dark">Stock Markets</h1>
+                    <p class="text-muted mb-0">Explore and analyze market opportunities</p>
+                </div>
+                <div class="d-flex gap-2">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'screener' %}" class="btn btn-primary-modern">
+                        <i class="bi bi-funnel me-2"></i>Advanced Screener
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-body">
+                    <form method="get" class="row g-3 align-items-center">
+                        <div class="col-lg-4 col-md-6">
+                            <label class="form-label-modern">Search Stocks</label>
+                            <div class="input-group d-flex align-items-stretch">
+                                <input type="text" 
+                                       class="form-input-modern" 
+                                       name="q" 
+                                       value="{{ query }}" 
+                                       placeholder="Search by symbol or company name..."
+                                       aria-label="Search stocks">
+                                <button class="btn btn-primary-modern" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <label class="form-label-modern">Filter by Sector</label>
+                            <select name="sector" class="form-input-modern">
+                                <option value="">All Sectors</option>
+                                {% for sector in sectors %}
+                                <option value="{{ sector }}" {% if sector == current_sector %}selected{% endif %}>
+                                    {{ sector }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <button type="submit" class="btn btn-secondary-modern w-100">
+                                <i class="bi bi-funnel me-2"></i>Filter
+                            </button>
+                        </div>
+                        {% if query or current_sector %}
+                        <div class="col-lg-2 col-md-6">
+                            <a href="{% url 'stocks' %}" class="btn btn-outline-secondary w-100">
+                                <i class="bi bi-x-circle me-2"></i>Clear
+                            </a>
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Summary -->
+    {% if query or current_sector %}
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="alert alert-info modern-card">
+                <i class="bi bi-info-circle me-2"></i>
+                Showing {{ stocks.count }} result{{ stocks.count|pluralize }} 
+                {% if query %}for "{{ query }}"{% endif %}
+                {% if current_sector %}in {{ current_sector }} sector{% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Stock Grid -->
+    <div class="row">
+        {% for stock in stocks %}
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="modern-card h-100 stock-card">
+                <div class="modern-card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark">{{ stock.symbol }}</h5>
+                            <p class="text-muted mb-0 small">{{ stock.name|truncatechars:25 }}</p>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary" 
+                                    type="button" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu modern-card">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'add_to_watchlist' %}?symbol={{ stock.symbol }}">
+                                        <i class="bi bi-star me-2"></i>Add to Watchlist
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'advanced_trading' %}?symbol={{ stock.symbol }}">
+                                        <i class="bi bi-cart-plus me-2"></i>Quick Trade
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h4 mb-0 fw-bold text-dark">${{ stock.price|floatformat:2 }}</span>
+                            <span class="badge {% if stock.change_pct >= 0 %}bg-success{% else %}bg-danger{% endif %} fs-6">
+                                {% if stock.change_pct >= 0 %}+{% endif %}{{ stock.change_pct|floatformat:2 }}%
+                            </span>
+                        </div>
+                        <small class="text-muted">
+                            {% if stock.change_pct >= 0 %}+{% endif %}${{ stock.change|floatformat:2 }} today
+                        </small>
+                    </div>
+
+                    <div class="row text-center mb-3">
+                        <div class="col-6">
+                            <div class="border-end">
+                                <div class="fw-bold small text-dark">Volume</div>
+                                <div class="text-muted small">{{ stock.volume|floatformat:0 }}</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="fw-bold small text-dark">Sector</div>
+                            <div class="text-muted small">{{ stock.sector|default:"N/A" }}</div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'stock_detail' stock.symbol %}" 
+                           class="btn btn-primary-modern">
+                            <i class="bi bi-graph-up me-2"></i>View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-body text-center py-5">
+                    <i class="bi bi-search text-muted" style="font-size: 4rem;"></i>
+                    <h3 class="mt-3 mb-2">No stocks found</h3>
+                    <p class="text-muted">
+                        {% if query or current_sector %}
+                            Try adjusting your search criteria or clear the filters.
+                        {% else %}
+                            No stocks are available at the moment.
+                        {% endif %}
+                    </p>
+                    {% if query or current_sector %}
+                    <a href="{% url 'stocks' %}" class="btn btn-primary-modern">
+                        <i class="bi bi-arrow-clockwise me-2"></i>View All Stocks
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if stocks.has_other_pages %}
+    <div class="row mt-4">
+        <div class="col-12">
+            <nav aria-label="Stock pagination">
+                <ul class="pagination justify-content-center">
+                    {% if stocks.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ stocks.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if current_sector %}&sector={{ current_sector }}{% endif %}">
+                            <i class="bi bi-chevron-left"></i> Previous
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                    <li class="page-item active">
+                        <span class="page-link">
+                            Page {{ stocks.number }} of {{ stocks.paginator.num_pages }}
+                        </span>
+                    </li>
+                    
+                    {% if stocks.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ stocks.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if current_sector %}&sector={{ current_sector }}{% endif %}">
+                            Next <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.stock-card {
+    transition: var(--transition-normal);
+    border: 1px solid var(--gray-200);
+}
+
+.stock-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+.badge.fs-6 {
+    font-size: 0.875rem !important;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    transition: var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+}
+
+.pagination .page-link {
+    border: none;
+    background: white;
+    color: var(--primary-600);
+    padding: 0.75rem 1rem;
+    margin: 0 0.125rem;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
+}
+
+.pagination .page-link:hover {
+    background: var(--primary-50);
+    color: var(--primary-700);
+    transform: translateY(-1px);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--primary-600);
+    color: white;
+}
+</style>
+{% endblock %}

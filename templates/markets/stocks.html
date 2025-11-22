@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}All Stocks - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>All Stocks</h2>
+        
+        <!-- Sector Filter -->
+        <div class="dropdown">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                {% if current_sector %}{{ current_sector }}{% else %}All Sectors{% endif %}
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'stocks' %}">All Sectors</a></li>
+                {% for sector in sectors %}
+                <li><a class="dropdown-item" href="{% url 'stocks' %}?sector={{ sector }}">{{ sector }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% if query %}
+    <div class="mb-4">
+        <h5>Search results for "{{ query }}"</h5>
+        <a href="{% url 'stocks' %}" class="btn btn-sm btn-outline-secondary">Clear Search</a>
+    </div>
+    {% endif %}
+
+    <!-- Stocks Table -->
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Change %</th>
+                    <th>Sector</th>
+                    <th>Exchange</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                <tr>
+                    <td><strong>{{ stock.symbol }}</strong></td>
+                    <td>{{ stock.name }}</td>
+                    <td>₹{{ stock.current_price }}</td>
+                    <td class="{% if stock.change_pct > 0 %}price-up{% else %}price-down{% endif %}">
+                        <i class="bi {% if stock.change_pct > 0 %}bi-arrow-up-right{% else %}bi-arrow-down-right{% endif %}"></i>
+                        {{ stock.change_pct }}%
+                    </td>
+                    <td>{{ stock.sector }}</td>
+                    <td>{{ stock.exchange }}</td>
+                    <td>
+                        <a href="{% url 'stock_detail' symbol=stock.symbol %}" 
+                           class="btn btn-primary btn-sm">View</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center py-4">
+                        <i class="bi bi-search me-2"></i>
+                        No stocks found matching your criteria
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

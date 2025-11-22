@@ -1,0 +1,57 @@
+/* Custom styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Price changes */
+.price-up {
+    color: #198754;  /* Bootstrap success color */
+}
+
+.price-down {
+    color: #dc3545;  /* Bootstrap danger color */
+}
+
+/* Card customizations */
+.market-card {
+    transition: transform 0.2s;
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Chart containers */
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+/* Table customizations */
+.table-hover tbody tr:hover {
+    background-color: rgba(0,0,0,.075);
+}
+
+/* Button customizations */
+.btn-trade {
+    min-width: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+    cursor: pointer;
+}

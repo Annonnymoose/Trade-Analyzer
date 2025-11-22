@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block title %}Stock Screener - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2 class="mb-4">Stock Screener</h2>
+    
+    <!-- Screening Filters -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form id="screenerForm">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="form-label">Market Cap</label>
+                        <select class="form-select" name="market_cap">
+                            <option value="">All</option>
+                            <option value="large">Large Cap (>₹20,000 Cr)</option>
+                            <option value="mid">Mid Cap (₹5,000-20,000 Cr)</option>
+                            <option value="small">Small Cap (<₹5,000 Cr)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Price Range</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Min" name="price_min">
+                            <input type="number" class="form-control" placeholder="Max" name="price_max">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Change %</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Min" name="change_min">
+                            <input type="number" class="form-control" placeholder="Max" name="change_max">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Volume</label>
+                        <select class="form-select" name="volume">
+                            <option value="">All</option>
+                            <option value="high">High Volume</option>
+                            <option value="medium">Medium Volume</option>
+                            <option value="low">Low Volume</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Sector</label>
+                        <select class="form-select" name="sector">
+                            <option value="">All Sectors</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Banking">Banking</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Healthcare">Healthcare</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">&nbsp;</label>
+                        <button type="submit" class="btn btn-primary d-block w-100">
+                            <i class="bi bi-funnel"></i> Screen
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Results Table -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Screening Results</h5>
+            <div>
+                <button class="btn btn-outline-secondary btn-sm me-2">
+                    <i class="bi bi-download"></i> Export
+                </button>
+                <button class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-bookmark"></i> Save Screen
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover" id="screenerResults">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Company</th>
+                            <th>Price</th>
+                            <th>Change %</th>
+                            <th>Volume</th>
+                            <th>Market Cap</th>
+                            <th>P/E Ratio</th>
+                            <th>52W High/Low</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Results will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('screenerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Simulate screening results
+    const results = [
+        {
+            symbol: 'RELIANCE',
+            name: 'Reliance Industries Ltd.',
+            price: 2876.45,
+            change: 1.23,
+            volume: '1.5M',
+            marketCap: '19.5L Cr',
+            pe: 24.5,
+            high52: 3024.90,
+            low52: 2150.30
+        },
+        {
+            symbol: 'TCS',
+            name: 'Tata Consultancy Services',
+            price: 3456.90,
+            change: 0.75,
+            volume: '980K',
+            marketCap: '12.8L Cr',
+            pe: 28.2,
+            high52: 3780.50,
+            low52: 2890.10
+        }
+    ];
+    
+    const tbody = document.querySelector('#screenerResults tbody');
+    tbody.innerHTML = '';
+    
+    results.forEach(stock => {
+        const row = `
+            <tr>
+                <td><strong>${stock.symbol}</strong></td>
+                <td>${stock.name}</td>
+                <td>₹${stock.price.toFixed(2)}</td>
+                <td class="${stock.change > 0 ? 'text-success' : 'text-danger'}">
+                    ${stock.change > 0 ? '+' : ''}${stock.change}%
+                </td>
+                <td>${stock.volume}</td>
+                <td>${stock.marketCap}</td>
+                <td>${stock.pe}</td>
+                <td>
+                    <small>H: ₹${stock.high52}<br>L: ₹${stock.low52}</small>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">View</button>
+                    <button class="btn btn-sm btn-outline-success">Trade</button>
+                </td>
+            </tr>
+        `;
+        tbody.innerHTML += row;
+    });
+});
+</script>
+{% endblock %}

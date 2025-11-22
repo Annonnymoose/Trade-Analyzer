@@ -1,0 +1,100 @@
+[
+  {
+    "model": "markets.ticker",
+    "pk": 1,
+    "fields": {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries Ltd.",
+      "exchange": "NSE",
+      "sector": "Energy",
+      "current_price": "2876.45",
+      "change_pct": "1.23",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 2,
+    "fields": {
+      "symbol": "TCS",
+      "name": "Tata Consultancy Services Ltd.",
+      "exchange": "NSE",
+      "sector": "Technology",
+      "current_price": "3456.90",
+      "change_pct": "0.75",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 3,
+    "fields": {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank Ltd.",
+      "exchange": "NSE",
+      "sector": "Banking",
+      "current_price": "1678.35",
+      "change_pct": "-0.45",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 4,
+    "fields": {
+      "symbol": "INFY",
+      "name": "Infosys Ltd.",
+      "exchange": "NSE",
+      "sector": "Technology",
+      "current_price": "1567.80",
+      "change_pct": "0.65",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 5,
+    "fields": {
+      "symbol": "BHARTIARTL",
+      "name": "Bharti Airtel Ltd.",
+      "exchange": "NSE",
+      "sector": "Telecom",
+      "current_price": "892.55",
+      "change_pct": "1.05",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 6,
+    "fields": {
+      "symbol": "NIFTY50",
+      "name": "NIFTY 50 Index",
+      "exchange": "NSE",
+      "sector": "Index",
+      "current_price": "21600.15",
+      "change_pct": "0.45",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": true
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 7,
+    "fields": {
+      "symbol": "SENSEX",
+      "name": "S&P BSE SENSEX",
+      "exchange": "BSE",
+      "sector": "Index",
+      "current_price": "71200.25",
+      "change_pct": "0.50",
+      "last_updated": "2025-09-11T10:30:00Z",
+      "is_index": true
+    }
+  }
+]

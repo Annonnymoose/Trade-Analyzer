@@ -1,0 +1,508 @@
+{% extends 'base_modern.html' %}
+
+{% block title %}Sign In - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="row w-100 justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
+                <!-- Glass Card -->
+                <div class="glass-card auth-card">
+                    <div class="auth-card-body">
+                        <!-- Header -->
+                        <div class="text-center mb-4">
+                            <div class="auth-icon-wrapper">
+                                <i class="bi bi-graph-up-arrow auth-icon"></i>
+                            </div>
+                            <h2 class="auth-title">Welcome Back</h2>
+                            <p class="auth-subtitle">Sign in to your trading account</p>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form method="post" class="auth-form">
+                            {% csrf_token %}
+                            
+                            <!-- Email/Username Field -->
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Username</label>
+                                <div class="input-group-modern">
+                                    <div class="input-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                    <input type="text" 
+                                           name="username" 
+                                           class="form-control"
+                                           placeholder="Enter your username"
+                                           required>
+                                </div>
+                                {% if form.username.errors %}
+                                    <div class="form-error">
+                                        {{ form.username.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Password Field -->
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Password</label>
+                                <div class="input-group-modern">
+                                    <div class="input-icon">
+                                        <i class="bi bi-lock"></i>
+                                    </div>
+                                    <input type="password" 
+                                           name="password" 
+                                           class="form-control"
+                                           placeholder="Enter your password"
+                                           required>
+                                    <button type="button" class="password-toggle" onclick="togglePassword()">
+                                        <i class="bi bi-eye" id="toggleIcon"></i>
+                                    </button>
+                                </div>
+                                {% if form.password.errors %}
+                                    <div class="form-error">
+                                        {{ form.password.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Remember Me & Forgot Password -->
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check-modern">
+                                    <input type="checkbox" class="form-check-input-modern" id="rememberMe" name="remember_me">
+                                    <label class="form-check-label-modern" for="rememberMe">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href="#" class="auth-link">Forgot password?</a>
+                            </div>
+
+                            <!-- Non-field Errors -->
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger glass-alert">
+                                    <i class="bi bi-exclamation-triangle me-2"></i>
+                                    {{ form.non_field_errors.0 }}
+                                </div>
+                            {% endif %}
+
+                            <!-- Sign In Button -->
+                            <button type="submit" class="btn btn-primary-glass w-100 mb-3">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>
+                                Sign In to Trading Account
+                            </button>
+
+                            <!-- Divider -->
+                            <div class="auth-divider">
+                                <span>New to trading?</span>
+                            </div>
+
+                            <!-- Sign Up Link -->
+                            <a href="{% url 'register' %}" class="btn btn-secondary-glass w-100">
+                                <i class="bi bi-person-plus me-2"></i>
+                                Create Trading Account
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="auth-features">
+                    <div class="row g-3 text-center">
+                        <div class="col-4">
+                            <div class="feature-item">
+                                <i class="bi bi-shield-check"></i>
+                                <span>Secure</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="feature-item">
+                                <i class="bi bi-lightning"></i>
+                                <span>Fast</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="feature-item">
+                                <i class="bi bi-graph-up"></i>
+                                <span>Real-time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Auth Container */
+.auth-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23ffffff;stop-opacity:0.05"/></linearGradient></defs><polygon fill="url(%23grad)" points="0,1000 1000,0 1000,1000"/></svg>') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.auth-card-body {
+    padding: 3rem 2.5rem;
+}
+
+/* Auth Header */
+.auth-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-icon {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.auth-title {
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+/* Form Styling */
+.form-group-modern {
+    margin-bottom: 1.5rem;
+}
+
+.form-label-modern {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.input-group-modern {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 3;
+    font-size: 1.1rem;
+}
+
+.form-group-modern input,
+.form-control {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group-modern input:focus,
+.form-control:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.form-group-modern input::placeholder,
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    z-index: 3;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: white;
+}
+
+/* Form Check */
+.form-check-modern {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input-modern {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+    accent-color: white;
+}
+
+.form-check-label-modern {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Links */
+.auth-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary-glass {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-primary-glass:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-secondary-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Divider */
+.auth-divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.auth-divider span {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+/* Error Styling */
+.form-error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-error::before {
+    content: '⚠';
+    margin-right: 0.5rem;
+}
+
+.glass-alert {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+/* Features */
+.auth-features {
+    margin-top: 2rem;
+}
+
+.feature-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+}
+
+.feature-item i {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-card-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    .auth-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .auth-icon {
+        font-size: 2rem;
+    }
+    
+    .auth-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading State */
+.btn-primary-glass:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-primary-glass.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-primary-glass.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+</style>
+
+<script>
+function togglePassword() {
+    const passwordInput = document.querySelector('input[name="password"]');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.className = 'bi bi-eye-slash';
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.className = 'bi bi-eye';
+    }
+}
+
+// Form submission loading state
+document.querySelector('.auth-form').addEventListener('submit', function(e) {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+});
+
+// Add floating animation to the glass card
+document.addEventListener('DOMContentLoaded', function() {
+    const card = document.querySelector('.glass-card');
+    
+    // Subtle floating animation
+    setInterval(() => {
+        card.style.transform = `translateY(${Math.sin(Date.now() * 0.001) * 2}px)`;
+    }, 50);
+});
+</script>
+{% endblock %}

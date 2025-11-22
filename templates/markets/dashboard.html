@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Market Overview Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="mb-0" id="portfolioValue">₹{{ total_portfolio_value|floatformat:2 }}</h4>
+                            <p class="mb-0">Portfolio Value</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="bi bi-wallet2 fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="mb-0" id="todayGains">+₹2,450.75</h4>
+                            <p class="mb-0">Today's Gains</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="bi bi-trending-up fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="mb-0" id="activeStocks">{{ active_stocks_count }}</h4>
+                            <p class="mb-0">Active Positions</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="bi bi-graph-up fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="mb-0" id="totalTrades">{{ total_trades }}</h4>
+                            <p class="mb-0">Total Trades</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="bi bi-arrow-left-right fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Market Heatmap and News -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Market Heatmap</h5>
+                </div>
+                <div class="card-body">
+                    <div id="heatmapChart" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Market News</h5>
+                </div>
+                <div class="card-body" style="height: 400px; overflow-y: auto;">
+                    <div class="news-item mb-3">
+                        <h6 class="mb-1">RIL reports strong Q2 earnings</h6>
+                        <p class="mb-1 text-muted small">Reliance Industries reports 15% growth in quarterly profits...</p>
+                        <small class="text-muted">2 hours ago</small>
+                    </div>
+                    <div class="news-item mb-3">
+                        <h6 class="mb-1">Tech stocks rally continues</h6>
+                        <p class="mb-1 text-muted small">TCS and Infosys lead the technology sector gains...</p>
+                        <small class="text-muted">4 hours ago</small>
+                    </div>
+                    <div class="news-item mb-3">
+                        <h6 class="mb-1">Banking sector outlook</h6>
+                        <p class="mb-1 text-muted small">HDFC Bank shows resilient performance amid market volatility...</p>
+                        <small class="text-muted">6 hours ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Gainers/Losers and Watchlist -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#gainers">Top Gainers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#losers">Top Losers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="gainers">
+                            <div class="list-group list-group-flush">
+                                {% for stock in top_gainers %}
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>{{ stock.symbol }}</strong>
+                                        <br><small class="text-muted">{{ stock.name }}</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div>₹{{ stock.current_price }}</div>
+                                        <div class="text-success">+{{ stock.change_pct }}%</div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="losers">
+                            <div class="list-group list-group-flush">
+                                {% for stock in top_losers %}
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>{{ stock.symbol }}</strong>
+                                        <br><small class="text-muted">{{ stock.name }}</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div>₹{{ stock.current_price }}</div>
+                                        <div class="text-danger">{{ stock.change_pct }}%</div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Your Watchlist</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group list-group-flush">
+                        {% for item in watchlist_items %}
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ item.ticker.symbol }}</strong>
+                                <br><small class="text-muted">{{ item.ticker.name }}</small>
+                            </div>
+                            <div class="text-end">
+                                <div>₹{{ item.ticker.current_price }}</div>
+                                <div class="{% if item.ticker.change_pct > 0 %}text-success{% else %}text-danger{% endif %}">
+                                    {{ item.ticker.change_pct }}%
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div class="text-center py-3">
+                            <p class="text-muted">No stocks in watchlist</p>
+                            <a href="{% url 'stocks' %}" class="btn btn-outline-primary btn-sm">Add Stocks</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Updates Modal -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050">
+    <div id="liveToast" class="toast hide" role="alert">
+        <div class="toast-header">
+            <strong class="me-auto">Market Update</strong>
+            <small class="text-muted">Live</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="toastMessage">
+            Portfolio updated with latest prices
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Live price updates simulation
+function updateLivePrices() {
+    // Simulate price changes
+    const elements = document.querySelectorAll('[data-symbol]');
+    elements.forEach(el => {
+        const currentPrice = parseFloat(el.textContent.replace('₹', ''));
+        const change = (Math.random() - 0.5) * 10;
+        const newPrice = Math.max(0, currentPrice + change);
+        el.textContent = `₹${newPrice.toFixed(2)}`;
+        
+        // Show toast notification
+        const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+        document.getElementById('toastMessage').textContent = `${el.dataset.symbol} updated to ₹${newPrice.toFixed(2)}`;
+        toast.show();
+    });
+}
+
+// Update prices every 30 seconds
+setInterval(updateLivePrices, 30000);
+
+// Market heatmap using Chart.js
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('heatmapChart');
+    if (ctx) {
+        // This would be a treemap chart showing sector performance
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Technology', 'Banking', 'Energy', 'Healthcare', 'Automotive'],
+                datasets: [{
+                    label: 'Sector Performance (%)',
+                    data: [2.5, -1.2, 0.8, 1.9, -0.5],
+                    backgroundColor: function(context) {
+                        const value = context.parsed.y;
+                        return value > 0 ? '#26a69a' : '#ef5350';
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

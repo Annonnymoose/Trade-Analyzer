@@ -1,0 +1,523 @@
+{% extends 'base_modern.html' %}
+
+{% block title %}Portfolio - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="display-6 fw-bold mb-2">Portfolio Overview</h1>
+                    <p class="text-muted mb-0">Track your investments and performance</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="{% url 'advanced_trading' %}" class="btn btn-primary-modern">
+                        <i class="bi bi-plus-circle me-2"></i>New Trade
+                    </a>
+                    <button class="btn btn-secondary-modern" onclick="exportPortfolio()">
+                        <i class="bi bi-download me-2"></i>Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card portfolio-summary-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-primary-light me-3">
+                            <i class="bi bi-wallet2 text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1 small">Total Value</h6>
+                            <h4 class="mb-0 fw-bold">${{ total_value|floatformat:2 }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card portfolio-summary-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box {% if total_gain_loss >= 0 %}bg-success-light{% else %}bg-danger-light{% endif %} me-3">
+                            <i class="bi {% if total_gain_loss >= 0 %}bi-arrow-up{% else %}bi-arrow-down{% endif %} {% if total_gain_loss >= 0 %}text-success{% else %}text-danger{% endif %}"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1 small">Total P&L</h6>
+                            <h4 class="mb-0 fw-bold {% if total_gain_loss >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                {% if total_gain_loss >= 0 %}+{% endif %}${{ total_gain_loss|floatformat:2 }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card portfolio-summary-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-info-light me-3">
+                            <i class="bi bi-percent text-info"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1 small">Return %</h6>
+                            <h4 class="mb-0 fw-bold {% if total_return_pct >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                {% if total_return_pct >= 0 %}+{% endif %}{{ total_return_pct|floatformat:2 }}%
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card portfolio-summary-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-warning-light me-3">
+                            <i class="bi bi-graph-up text-warning"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1 small">Day Change</h6>
+                            <h4 class="mb-0 fw-bold {% if day_change >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                {% if day_change >= 0 %}+{% endif %}${{ day_change|floatformat:2 }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Chart and Allocation -->
+    <div class="row mb-4">
+        <div class="col-lg-8 mb-4">
+            <div class="modern-card">
+                <div class="modern-card-header">
+                    <h5 class="mb-0">Portfolio Performance</h5>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary active" data-period="1D">1D</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-period="1W">1W</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-period="1M">1M</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-period="3M">3M</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-period="1Y">1Y</button>
+                    </div>
+                </div>
+                <div class="modern-card-body">
+                    <div id="portfolioChart" style="height: 300px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="modern-card h-100">
+                <div class="modern-card-header">
+                    <h5 class="mb-0">Asset Allocation</h5>
+                </div>
+                <div class="modern-card-body">
+                    <div id="allocationChart" style="height: 250px;" class="mb-3"></div>
+                    <div class="allocation-legend">
+                        {% for position in top_positions %}
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="d-flex align-items-center">
+                                <div class="allocation-color" style="background-color: {{ position.color }};"></div>
+                                <span class="small fw-bold">{{ position.symbol }}</span>
+                            </div>
+                            <span class="small text-muted">{{ position.percentage|floatformat:1 }}%</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if holdings %}
+    <!-- Holdings Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-header">
+                    <h5 class="mb-0">Current Holdings</h5>
+                    <div class="d-flex gap-2">
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-secondary-modern dropdown-toggle" 
+                                    type="button" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
+                                <i class="bi bi-funnel me-1"></i>Filter
+                            </button>
+                            <ul class="dropdown-menu modern-card">
+                                <li><a class="dropdown-item" href="?filter=all">All Holdings</a></li>
+                                <li><a class="dropdown-item" href="?filter=profitable">Profitable</a></li>
+                                <li><a class="dropdown-item" href="?filter=losing">Losing</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="?sort=value">Sort by Value</a></li>
+                                <li><a class="dropdown-item" href="?sort=return">Sort by Return</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="refreshPrices()">
+                            <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+                        </button>
+                    </div>
+                </div>
+                <div class="modern-card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="ps-4">Stock</th>
+                                    <th>Shares</th>
+                                    <th>Avg Cost</th>
+                                    <th>Current Price</th>
+                                    <th>Market Value</th>
+                                    <th>P&L</th>
+                                    <th>Return %</th>
+                                    <th class="text-end pe-4">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for holding in holdings %}
+                                <tr class="holding-row" data-symbol="{{ holding.symbol }}">
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <div class="stock-avatar">
+                                                    {{ holding.symbol|first }}
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">{{ holding.symbol }}</h6>
+                                                <small class="text-muted">{{ holding.company_name|truncatechars:25 }}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="fw-bold">{{ holding.shares|floatformat:0 }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">${{ holding.avg_cost|floatformat:2 }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="fw-bold">${{ holding.current_price|floatformat:2 }}</span>
+                                        <br>
+                                        <small class="{% if holding.day_change >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                            {% if holding.day_change >= 0 %}+{% endif %}{{ holding.day_change_pct|floatformat:2 }}%
+                                        </small>
+                                    </td>
+                                    <td>
+                                        <span class="h6 mb-0 fw-bold">${{ holding.market_value|floatformat:2 }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="{% if holding.unrealized_pnl >= 0 %}text-success{% else %}text-danger{% endif %} fw-bold">
+                                            {% if holding.unrealized_pnl >= 0 %}+{% endif %}${{ holding.unrealized_pnl|floatformat:2 }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge {% if holding.return_pct >= 0 %}bg-success{% else %}bg-danger{% endif %} fs-7">
+                                            {% if holding.return_pct >= 0 %}+{% endif %}{{ holding.return_pct|floatformat:2 }}%
+                                        </span>
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <div class="btn-group" role="group">
+                                            <a href="{% url 'stock_detail' holding.symbol %}" 
+                                               class="btn btn-sm btn-outline-primary"
+                                               title="View Details">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <a href="{% url 'advanced_trading' %}?symbol={{ holding.symbol }}&action=buy" 
+                                               class="btn btn-sm btn-outline-success"
+                                               title="Buy More">
+                                                <i class="bi bi-plus"></i>
+                                            </a>
+                                            <a href="{% url 'advanced_trading' %}?symbol={{ holding.symbol }}&action=sell" 
+                                               class="btn btn-sm btn-outline-warning"
+                                               title="Sell">
+                                                <i class="bi bi-dash"></i>
+                                            </a>
+                                            <div class="dropdown">
+                                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" 
+                                                        type="button" 
+                                                        data-bs-toggle="dropdown" 
+                                                        aria-expanded="false">
+                                                    <i class="bi bi-three-dots"></i>
+                                                </button>
+                                                <ul class="dropdown-menu modern-card">
+                                                    <li><a class="dropdown-item" href="#" onclick="setAlert('{{ holding.symbol }}')">
+                                                        <i class="bi bi-bell me-2"></i>Set Alert
+                                                    </a></li>
+                                                    <li><a class="dropdown-item" href="#" onclick="viewHistory('{{ holding.symbol }}')">
+                                                        <i class="bi bi-clock-history me-2"></i>Trade History
+                                                    </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-header">
+                    <h5 class="mb-0">Recent Transactions</h5>
+                    <a href="{% url 'trade_history' %}" class="btn btn-sm btn-outline-primary">
+                        View All <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+                <div class="modern-card-body">
+                    {% if recent_orders %}
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Stock</th>
+                                    <th>Shares</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in recent_orders %}
+                                <tr>
+                                    <td class="text-muted small">{{ order.created_at|date:"M d, H:i" }}</td>
+                                    <td>
+                                        <span class="badge {% if order.order_type == 'BUY' %}bg-success{% else %}bg-danger{% endif %} bg-opacity-10 text-dark">
+                                            {{ order.order_type }}
+                                        </span>
+                                    </td>
+                                    <td class="fw-bold">{{ order.ticker.symbol }}</td>
+                                    <td>{{ order.quantity|floatformat:0 }}</td>
+                                    <td>${{ order.price|floatformat:2 }}</td>
+                                    <td class="fw-bold">${{ order.total_amount|floatformat:2 }}</td>
+                                    <td>
+                                        <span class="badge bg-success bg-opacity-10 text-success">
+                                            {{ order.status }}
+                                        </span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center py-3">
+                        <p class="text-muted mb-0">No recent transactions</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <!-- Empty State -->
+    <div class="row">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-body text-center py-5">
+                    <i class="bi bi-briefcase text-muted" style="font-size: 4rem;"></i>
+                    <h3 class="mt-3 mb-2">Start Building Your Portfolio</h3>
+                    <p class="text-muted mb-4">Make your first trade to begin tracking your investments</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{% url 'advanced_trading' %}" class="btn btn-primary-modern">
+                            <i class="bi bi-plus-circle me-2"></i>Make First Trade
+                        </a>
+                        <a href="{% url 'stocks' %}" class="btn btn-secondary-modern">
+                            <i class="bi bi-search me-2"></i>Browse Stocks
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.portfolio-summary-card {
+    transition: var(--transition-normal);
+    border: 1px solid var(--gray-200);
+}
+
+.portfolio-summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-200);
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.bg-primary-light { background-color: var(--primary-50); }
+.bg-success-light { background-color: var(--success-50); }
+.bg-danger-light { background-color: var(--danger-50); }
+.bg-info-light { background-color: var(--info-50); }
+.bg-warning-light { background-color: var(--warning-50); }
+
+.stock-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.allocation-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.holding-row {
+    transition: var(--transition-fast);
+}
+
+.holding-row:hover {
+    background-color: var(--primary-25);
+}
+
+.table th {
+    border-bottom: 2px solid var(--gray-200);
+    color: var(--gray-700);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    padding: 1rem 0.75rem;
+}
+
+.table td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.btn-group .btn {
+    border-radius: var(--radius-md);
+    margin-right: 0.25rem;
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
+
+.badge.fs-7 {
+    font-size: 0.75rem !important;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    transition: var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+<script>
+// Portfolio Chart (placeholder - would use real charting library)
+function initPortfolioChart() {
+    // This would integrate with TradingView or Chart.js
+    console.log('Portfolio chart initialized');
+}
+
+// Allocation Chart (placeholder)
+function initAllocationChart() {
+    // This would show pie chart of holdings
+    console.log('Allocation chart initialized');
+}
+
+function refreshPrices() {
+    const button = document.querySelector('[onclick="refreshPrices()"]');
+    const icon = button.querySelector('i');
+    
+    icon.classList.add('fa-spin');
+    button.disabled = true;
+    
+    setTimeout(() => {
+        location.reload();
+    }, 1000);
+}
+
+function exportPortfolio() {
+    // Export functionality
+    console.log('Exporting portfolio...');
+}
+
+function setAlert(symbol) {
+    alert(`Setting alert for ${symbol}`);
+}
+
+function viewHistory(symbol) {
+    window.location.href = `/trade-history/?symbol=${symbol}`;
+}
+
+// Initialize charts when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initPortfolioChart();
+    initAllocationChart();
+});
+
+// Period buttons for chart
+document.querySelectorAll('[data-period]').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('[data-period]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Update chart with new period
+        console.log('Chart period changed to:', this.dataset.period);
+    });
+});
+</script>
+{% endblock %}

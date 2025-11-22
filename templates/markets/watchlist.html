@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Watchlist - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Watchlist</h2>
+
+    <!-- Watchlist Table -->
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Change %</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticker in watchlist.tickers.all %}
+                <tr>
+                    <td><strong>{{ ticker.symbol }}</strong></td>
+                    <td>{{ ticker.name }}</td>
+                    <td>₹{{ ticker.current_price }}</td>
+                    <td class="{% if ticker.change_pct > 0 %}price-up{% else %}price-down{% endif %}">
+                        <i class="bi {% if ticker.change_pct > 0 %}bi-arrow-up-right{% else %}bi-arrow-down-right{% endif %}"></i>
+                        {{ ticker.change_pct }}%
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="{% url 'stock_detail' symbol=ticker.symbol %}" 
+                               class="btn btn-primary btn-sm">View</a>
+                            <form method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="remove">
+                                <input type="hidden" name="ticker_id" value="{{ ticker.id }}">
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center py-4">
+                        <i class="bi bi-bookmark me-2"></i>
+                        Your watchlist is empty. Add stocks from the <a href="{% url 'stocks' %}">stocks page</a>.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

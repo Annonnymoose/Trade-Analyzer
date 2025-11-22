@@ -1,0 +1,388 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ stock.symbol }} - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Stock Header -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>{{ stock.name }} ({{ stock.symbol }})</h2>
+            <div class="d-flex align-items-center">
+                <h3 class="me-3 mb-0">₹{{ stock.current_price }}</h3>
+                <span class="h4 mb-0 {% if stock.change_pct > 0 %}price-up{% else %}price-down{% endif %}">
+                    <i class="bi {% if stock.change_pct > 0 %}bi-arrow-up-right{% else %}bi-arrow-down-right{% endif %}"></i>
+                    {{ stock.change_pct }}%
+                </span>
+            </div>
+            <small class="text-muted">Last updated: {{ stock.last_updated|date:"F j, Y, g:i a" }}</small>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <!-- Trade Buttons -->
+            <button class="btn btn-success btn-trade me-2" data-bs-toggle="modal" data-bs-target="#tradeModal" data-side="BUY">
+                <i class="bi bi-cart-plus"></i> Buy
+            </button>
+            <button class="btn btn-danger btn-trade me-2" data-bs-toggle="modal" data-bs-target="#tradeModal" data-side="SELL">
+                <i class="bi bi-cart-dash"></i> Sell
+            </button>
+            <a href="#" class="btn btn-outline-primary" target="_blank">
+                <i class="bi bi-box-arrow-up-right"></i> Trade on Broker
+            </a>
+        </div>
+    </div>
+
+    <!-- Charts and Info Tabs -->
+    <ul class="nav nav-tabs mb-4" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#overview">Overview</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#candlestick">Candlestick</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#fundamentals">Fundamentals</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- Overview Tab -->
+        <div class="tab-pane fade show active" id="overview">
+            <div class="card">
+                <div class="card-body">
+                    <div class="chart-container" id="lineChart">
+                        <!-- Line chart will be rendered here -->
+                    </div>
+                    <div class="btn-group mt-3">
+                        <button class="btn btn-outline-primary" data-range="7d">7D</button>
+                        <button class="btn btn-outline-primary active" data-range="1m">1M</button>
+                        <button class="btn btn-outline-primary" data-range="3m">3M</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Candlestick Tab -->
+        <div class="tab-pane fade" id="candlestick">
+            <div class="card">
+                <div class="card-body">
+                    <div class="chart-container" id="candlestickChart">
+                        <!-- Candlestick chart will be rendered here -->
+                    </div>
+                    <div class="chart-container mt-3" id="volumeChart" style="height: 100px">
+                        <!-- Volume chart will be rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fundamentals Tab -->
+        <div class="tab-pane fade" id="fundamentals">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table">
+                                <tr>
+                                    <th>Exchange</th>
+                                    <td>{{ stock.exchange }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sector</th>
+                                    <td>{{ stock.sector }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Stocks -->
+    <div class="mt-4">
+        <h4>Related Stocks</h4>
+        <div class="row">
+            {% for related in related_stocks %}
+            <div class="col-md-4 mb-3">
+                <div class="card market-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'stock_detail' symbol=related.symbol %}" class="text-decoration-none">
+                                {{ related.symbol }}
+                            </a>
+                        </h5>
+                        <p class="card-text">{{ related.name }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>₹{{ related.current_price }}</span>
+                            <span class="{% if related.change_pct > 0 %}price-up{% else %}price-down{% endif %}">
+                                {{ related.change_pct }}%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Trade Modal -->
+<div class="modal fade" id="tradeModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" action="{% url 'place_order' %}">
+                {% csrf_token %}
+                <input type="hidden" name="ticker_id" value="{{ stock.id }}">
+                <input type="hidden" name="side" id="tradeSide">
+                
+                <div class="modal-header">
+                    <h5 class="modal-title">Place Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Stock</label>
+                        <input type="text" class="form-control" readonly value="{{ stock.symbol }} - {{ stock.name }}">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Quantity</label>
+                        <input type="number" class="form-control" name="qty" required min="1" value="1">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Market Price</label>
+                        <input type="text" class="form-control" readonly value="₹{{ stock.current_price }}">
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        This is a demo trading platform. No real transactions will be executed.
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn" id="submitOrder">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Global variables for charts
+let lineChart = null;
+let candlestickChart = null;
+let volumeChart = null;
+let historicalData = [];
+
+// Function to fetch historical data
+async function fetchHistoricalData(range = '1m') {
+    try {
+        const response = await fetch(`/api/stocks/{{ stock.symbol }}/data/?period=${range}`);
+        const data = await response.json();
+        historicalData = data.data.reverse(); // Reverse for chronological order
+        return historicalData;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return [];
+    }
+}
+
+// Function to create line chart
+function createLineChart(data) {
+    const chartElement = document.getElementById('lineChart');
+    
+    if (lineChart) {
+        lineChart.remove();
+    }
+    
+    lineChart = LightweightCharts.createChart(chartElement, {
+        width: chartElement.offsetWidth,
+        height: chartElement.offsetHeight,
+        layout: {
+            background: { color: '#ffffff' },
+            textColor: '#333',
+        },
+        grid: {
+            vertLines: { color: '#f0f0f0' },
+            horzLines: { color: '#f0f0f0' },
+        },
+        crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+        },
+        rightPriceScale: {
+            borderColor: '#f0f0f0',
+        },
+        timeScale: {
+            borderColor: '#f0f0f0',
+        },
+    });
+    
+    const lineSeries = lineChart.addLineSeries({
+        color: '#2962FF',
+        lineWidth: 2,
+    });
+    
+    lineSeries.setData(data.map(item => ({
+        time: item.t,
+        value: item.c,
+    })));
+}
+
+// Function to create candlestick chart
+function createCandlestickChart(data) {
+    const chartElement = document.getElementById('candlestickChart');
+    const volumeElement = document.getElementById('volumeChart');
+    
+    if (candlestickChart) {
+        candlestickChart.remove();
+    }
+    if (volumeChart) {
+        volumeChart.remove();
+    }
+    
+    candlestickChart = LightweightCharts.createChart(chartElement, {
+        width: chartElement.offsetWidth,
+        height: chartElement.offsetHeight,
+        layout: {
+            background: { color: '#ffffff' },
+            textColor: '#333',
+        },
+        grid: {
+            vertLines: { color: '#f0f0f0' },
+            horzLines: { color: '#f0f0f0' },
+        },
+        crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+        },
+        rightPriceScale: {
+            borderColor: '#f0f0f0',
+        },
+        timeScale: {
+            borderColor: '#f0f0f0',
+        },
+    });
+    
+    const candlestickSeries = candlestickChart.addCandlestickSeries({
+        upColor: '#26a69a',
+        downColor: '#ef5350',
+        borderVisible: false,
+        wickUpColor: '#26a69a',
+        wickDownColor: '#ef5350',
+    });
+    
+    candlestickSeries.setData(data.map(item => ({
+        time: item.t,
+        open: item.o,
+        high: item.h,
+        low: item.l,
+        close: item.c,
+    })));
+    
+    // Create volume chart
+    volumeChart = LightweightCharts.createChart(volumeElement, {
+        width: volumeElement.offsetWidth,
+        height: volumeElement.offsetHeight,
+        layout: {
+            background: { color: '#ffffff' },
+            textColor: '#333',
+        },
+        grid: {
+            vertLines: { color: '#f0f0f0' },
+            horzLines: { color: '#f0f0f0' },
+        },
+        rightPriceScale: {
+            scaleMargins: {
+                top: 0.1,
+                bottom: 0.1,
+            },
+        },
+    });
+    
+    const volumeSeries = volumeChart.addHistogramSeries({
+        color: '#26a69a',
+        priceFormat: {
+            type: 'volume',
+        },
+        priceScaleId: '',
+    });
+    
+    volumeSeries.setData(data.map(item => ({
+        time: item.t,
+        value: item.v,
+        color: item.c >= item.o ? '#26a69a' : '#ef5350',
+    })));
+}
+
+// Initialize charts
+async function initCharts() {
+    const data = await fetchHistoricalData();
+    createLineChart(data);
+    createCandlestickChart(data);
+    
+    // Handle tab changes
+    document.querySelectorAll('a[data-bs-toggle="tab"]').forEach(tab => {
+        tab.addEventListener('shown.bs.tab', e => {
+            if (e.target.getAttribute('href') === '#overview') {
+                createLineChart(historicalData);
+            } else if (e.target.getAttribute('href') === '#candlestick') {
+                createCandlestickChart(historicalData);
+            }
+        });
+    });
+    
+    // Handle range buttons
+    document.querySelectorAll('[data-range]').forEach(button => {
+        button.addEventListener('click', async e => {
+            const range = e.target.dataset.range;
+            const data = await fetchHistoricalData(range);
+            createLineChart(data);
+            
+            // Update active button
+            document.querySelectorAll('[data-range]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            e.target.classList.add('active');
+        });
+    });
+}
+
+// Handle trade modal
+document.querySelectorAll('[data-bs-target="#tradeModal"]').forEach(button => {
+    button.addEventListener('click', e => {
+        const side = e.target.dataset.side;
+        document.getElementById('tradeSide').value = side;
+        document.getElementById('submitOrder').className = 
+            `btn ${side === 'BUY' ? 'btn-success' : 'btn-danger'}`;
+        document.getElementById('submitOrder').textContent = 
+            `Place ${side} Order`;
+    });
+});
+
+// Initialize on page load
+window.addEventListener('load', initCharts);
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (lineChart) {
+        lineChart.applyOptions({
+            width: document.getElementById('lineChart').offsetWidth
+        });
+    }
+    if (candlestickChart) {
+        candlestickChart.applyOptions({
+            width: document.getElementById('candlestickChart').offsetWidth
+        });
+    }
+    if (volumeChart) {
+        volumeChart.applyOptions({
+            width: document.getElementById('volumeChart').offsetWidth
+        });
+    }
+});
+</script>
+{% endblock %}

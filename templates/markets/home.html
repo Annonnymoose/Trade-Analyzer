@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Market Overview -->
+    <h2 class="mb-4">Market Overview</h2>
+    <div class="row mb-4">
+        {% for index in indices %}
+        <div class="col-md-6 mb-3">
+            <div class="card market-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ index.name }}</h5>
+                    <h3 class="mb-2">{{ index.current_price }}</h3>
+                    <span class="{% if index.change_pct > 0 %}price-up{% else %}price-down{% endif %}">
+                        <i class="bi {% if index.change_pct > 0 %}bi-arrow-up-right{% else %}bi-arrow-down-right{% endif %}"></i>
+                        {{ index.change_pct }}%
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Top Movers -->
+    <h2 class="mb-4">Top Movers</h2>
+    <div class="row">
+        {% for stock in top_movers %}
+        <div class="col-md-4 mb-3">
+            <div class="card market-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{% url 'stock_detail' symbol=stock.symbol %}" class="text-decoration-none">
+                            {{ stock.symbol }}
+                        </a>
+                    </h5>
+                    <p class="card-text">{{ stock.name }}</p>
+                    <h4>₹{{ stock.current_price }}</h4>
+                    <span class="{% if stock.change_pct > 0 %}price-up{% else %}price-down{% endif %}">
+                        <i class="bi {% if stock.change_pct > 0 %}bi-arrow-up-right{% else %}bi-arrow-down-right{% endif %}"></i>
+                        {{ stock.change_pct }}%
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h3>Quick Actions</h3>
+            <div class="d-grid gap-2">
+                <a href="{% url 'portfolio' %}" class="btn btn-primary btn-lg">
+                    <i class="bi bi-wallet2"></i> Open Demo Portfolio
+                </a>
+                <a href="{% url 'stocks' %}" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-search"></i> Browse All Stocks
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

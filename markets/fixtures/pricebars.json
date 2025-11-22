@@ -1,0 +1,110 @@
+[
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 1,
+      "date": "2024-01-09",
+      "open": 2800.50,
+      "high": 2890.75,
+      "low": 2795.25,
+      "close": 2876.45,
+      "volume": 1250000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 1,
+      "date": "2024-01-10",
+      "open": 2876.45,
+      "high": 2900.00,
+      "low": 2850.00,
+      "close": 2885.30,
+      "volume": 980000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 1,
+      "date": "2024-01-11",
+      "open": 2885.30,
+      "high": 2915.50,
+      "low": 2870.25,
+      "close": 2910.75,
+      "volume": 1100000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 2,
+      "date": "2024-01-09",
+      "open": 140.50,
+      "high": 146.75,
+      "low": 139.25,
+      "close": 145.75,
+      "volume": 2500000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 2,
+      "date": "2024-01-10",
+      "open": 145.75,
+      "high": 147.50,
+      "low": 144.00,
+      "close": 146.30,
+      "volume": 1800000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 2,
+      "date": "2024-01-11",
+      "open": 146.30,
+      "high": 148.25,
+      "low": 145.50,
+      "close": 147.80,
+      "volume": 2200000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 3,
+      "date": "2024-01-09",
+      "open": 1550.50,
+      "high": 1570.75,
+      "low": 1545.25,
+      "close": 1567.80,
+      "volume": 850000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 3,
+      "date": "2024-01-10",
+      "open": 1567.80,
+      "high": 1580.00,
+      "low": 1560.00,
+      "close": 1575.30,
+      "volume": 750000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "fields": {
+      "ticker": 3,
+      "date": "2024-01-11",
+      "open": 1575.30,
+      "high": 1585.50,
+      "low": 1570.25,
+      "close": 1582.75,
+      "volume": 900000
+    }
+  }
+]

@@ -1,0 +1,5852 @@
+[
+  {
+    "model": "markets.pricebar",
+    "pk": 1,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-13",
+      "open": "2800.00",
+      "high": "2852.32",
+      "low": "2788.22",
+      "close": "2841.27",
+      "volume": 2492194
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 2,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-14",
+      "open": "2841.27",
+      "high": "2883.75",
+      "low": "2822.86",
+      "close": "2868.13",
+      "volume": 2727401
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 3,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-15",
+      "open": "2868.13",
+      "high": "2916.28",
+      "low": "2850.24",
+      "close": "2898.24",
+      "volume": 2397866
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 4,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-16",
+      "open": "2898.24",
+      "high": "2913.44",
+      "low": "2892.03",
+      "close": "2904.85",
+      "volume": 1101831
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 5,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-17",
+      "open": "2904.85",
+      "high": "2962.62",
+      "low": "2896.15",
+      "close": "2942.85",
+      "volume": 2018756
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 6,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-18",
+      "open": "2942.85",
+      "high": "2989.93",
+      "low": "2923.01",
+      "close": "2972.83",
+      "volume": 2198398
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 7,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-19",
+      "open": "2972.83",
+      "high": "2988.72",
+      "low": "2951.68",
+      "close": "2978.97",
+      "volume": 1425761
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 8,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-20",
+      "open": "2978.97",
+      "high": "3004.60",
+      "low": "2962.44",
+      "close": "2999.61",
+      "volume": 1873162
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 9,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-21",
+      "open": "2999.61",
+      "high": "3002.95",
+      "low": "2978.83",
+      "close": "2985.66",
+      "volume": 1498516
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 10,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-22",
+      "open": "2985.66",
+      "high": "3015.93",
+      "low": "2983.51",
+      "close": "3013.48",
+      "volume": 2776483
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 11,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-23",
+      "open": "3013.48",
+      "high": "3019.32",
+      "low": "2988.37",
+      "close": "2989.71",
+      "volume": 1586685
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 12,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-24",
+      "open": "2989.71",
+      "high": "3004.17",
+      "low": "2971.22",
+      "close": "2972.68",
+      "volume": 1949194
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 13,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-25",
+      "open": "2972.68",
+      "high": "2974.23",
+      "low": "2949.12",
+      "close": "2965.88",
+      "volume": 1184265
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 14,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-26",
+      "open": "2965.88",
+      "high": "3015.48",
+      "low": "2946.41",
+      "close": "3008.73",
+      "volume": 2290561
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 15,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-27",
+      "open": "3008.73",
+      "high": "3053.68",
+      "low": "3003.30",
+      "close": "3045.11",
+      "volume": 2310000
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 16,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-28",
+      "open": "3045.11",
+      "high": "3094.13",
+      "low": "3038.44",
+      "close": "3071.21",
+      "volume": 1821838
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 17,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-29",
+      "open": "3071.21",
+      "high": "3089.43",
+      "low": "3029.77",
+      "close": "3041.96",
+      "volume": 1888971
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 18,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-06-30",
+      "open": "3041.96",
+      "high": "3091.89",
+      "low": "3028.20",
+      "close": "3069.52",
+      "volume": 1924739
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 19,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-01",
+      "open": "3069.52",
+      "high": "3085.64",
+      "low": "3005.07",
+      "close": "3024.91",
+      "volume": 2407559
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 20,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-02",
+      "open": "3024.91",
+      "high": "3065.87",
+      "low": "3017.44",
+      "close": "3052.26",
+      "volume": 1629537
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 21,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-03",
+      "open": "3052.26",
+      "high": "3080.21",
+      "low": "3036.54",
+      "close": "3076.63",
+      "volume": 2718288
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 22,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-04",
+      "open": "3076.63",
+      "high": "3132.57",
+      "low": "3060.25",
+      "close": "3114.03",
+      "volume": 2336852
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 23,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-05",
+      "open": "3114.03",
+      "high": "3122.31",
+      "low": "3092.83",
+      "close": "3109.49",
+      "volume": 1793113
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 24,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-06",
+      "open": "3109.49",
+      "high": "3129.66",
+      "low": "3100.69",
+      "close": "3105.29",
+      "volume": 1734890
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 25,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-07",
+      "open": "3105.29",
+      "high": "3105.76",
+      "low": "3100.67",
+      "close": "3102.40",
+      "volume": 1824850
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 26,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-08",
+      "open": "3102.40",
+      "high": "3120.47",
+      "low": "3098.05",
+      "close": "3117.81",
+      "volume": 1133819
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 27,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-09",
+      "open": "3117.81",
+      "high": "3158.02",
+      "low": "3113.11",
+      "close": "3146.15",
+      "volume": 2575205
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 28,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-10",
+      "open": "3146.15",
+      "high": "3199.40",
+      "low": "3139.39",
+      "close": "3178.23",
+      "volume": 2755499
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 29,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-11",
+      "open": "3178.23",
+      "high": "3183.82",
+      "low": "3144.20",
+      "close": "3149.19",
+      "volume": 2463624
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 30,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-12",
+      "open": "3149.19",
+      "high": "3162.45",
+      "low": "3091.20",
+      "close": "3114.27",
+      "volume": 2544740
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 31,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-13",
+      "open": "3114.27",
+      "high": "3121.70",
+      "low": "3055.16",
+      "close": "3068.66",
+      "volume": 1986594
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 32,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-14",
+      "open": "3068.66",
+      "high": "3070.50",
+      "low": "3059.47",
+      "close": "3066.83",
+      "volume": 1783497
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 33,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-15",
+      "open": "3066.83",
+      "high": "3079.05",
+      "low": "3048.09",
+      "close": "3051.07",
+      "volume": 1492662
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 34,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-16",
+      "open": "3051.07",
+      "high": "3054.23",
+      "low": "3004.16",
+      "close": "3022.32",
+      "volume": 1609855
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 35,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-17",
+      "open": "3022.32",
+      "high": "3067.58",
+      "low": "3021.86",
+      "close": "3048.37",
+      "volume": 2701351
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 36,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-18",
+      "open": "3048.37",
+      "high": "3097.64",
+      "low": "3043.20",
+      "close": "3091.21",
+      "volume": 1844444
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 37,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-19",
+      "open": "3091.21",
+      "high": "3103.45",
+      "low": "3055.50",
+      "close": "3055.78",
+      "volume": 2174521
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 38,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-20",
+      "open": "3055.78",
+      "high": "3076.54",
+      "low": "3024.28",
+      "close": "3024.55",
+      "volume": 2292421
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 39,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-21",
+      "open": "3024.55",
+      "high": "3059.39",
+      "low": "3002.77",
+      "close": "3051.41",
+      "volume": 2407248
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 40,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-22",
+      "open": "3051.41",
+      "high": "3060.33",
+      "low": "2988.98",
+      "close": "3005.79",
+      "volume": 2350122
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 41,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-23",
+      "open": "3005.79",
+      "high": "3016.92",
+      "low": "3000.88",
+      "close": "3011.56",
+      "volume": 1254298
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 42,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-24",
+      "open": "3011.56",
+      "high": "3058.65",
+      "low": "2990.43",
+      "close": "3050.63",
+      "volume": 2088087
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 43,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-25",
+      "open": "3050.63",
+      "high": "3082.39",
+      "low": "3031.60",
+      "close": "3078.00",
+      "volume": 2264262
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 44,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-26",
+      "open": "3078.00",
+      "high": "3101.98",
+      "low": "3066.04",
+      "close": "3083.50",
+      "volume": 1931564
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 45,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-27",
+      "open": "3083.50",
+      "high": "3105.84",
+      "low": "3065.94",
+      "close": "3075.58",
+      "volume": 1441099
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 46,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-28",
+      "open": "3075.58",
+      "high": "3090.03",
+      "low": "3037.98",
+      "close": "3058.10",
+      "volume": 1792541
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 47,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-29",
+      "open": "3058.10",
+      "high": "3090.59",
+      "low": "3056.34",
+      "close": "3090.34",
+      "volume": 2586332
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 48,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-30",
+      "open": "3090.34",
+      "high": "3112.38",
+      "low": "3087.64",
+      "close": "3088.07",
+      "volume": 1324955
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 49,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-07-31",
+      "open": "3088.07",
+      "high": "3131.43",
+      "low": "3078.00",
+      "close": "3131.18",
+      "volume": 2405395
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 50,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-01",
+      "open": "3131.18",
+      "high": "3141.27",
+      "low": "3103.65",
+      "close": "3107.42",
+      "volume": 2453082
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 51,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-02",
+      "open": "3107.42",
+      "high": "3107.47",
+      "low": "3077.17",
+      "close": "3079.94",
+      "volume": 2179553
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 52,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-03",
+      "open": "3079.94",
+      "high": "3124.33",
+      "low": "3065.37",
+      "close": "3115.92",
+      "volume": 2864988
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 53,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-04",
+      "open": "3115.92",
+      "high": "3127.55",
+      "low": "3096.09",
+      "close": "3118.66",
+      "volume": 1379801
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 54,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-05",
+      "open": "3118.66",
+      "high": "3145.23",
+      "low": "3108.77",
+      "close": "3139.00",
+      "volume": 1556037
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 55,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-06",
+      "open": "3139.00",
+      "high": "3191.87",
+      "low": "3118.51",
+      "close": "3184.03",
+      "volume": 2148656
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 56,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-07",
+      "open": "3184.03",
+      "high": "3205.55",
+      "low": "3178.84",
+      "close": "3193.01",
+      "volume": 1550981
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 57,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-08",
+      "open": "3193.01",
+      "high": "3207.95",
+      "low": "3162.41",
+      "close": "3163.51",
+      "volume": 2908336
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 58,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-09",
+      "open": "3163.51",
+      "high": "3209.55",
+      "low": "3150.28",
+      "close": "3200.45",
+      "volume": 2459500
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 59,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-10",
+      "open": "3200.45",
+      "high": "3205.99",
+      "low": "3198.52",
+      "close": "3198.91",
+      "volume": 1362529
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 60,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-11",
+      "open": "3198.91",
+      "high": "3215.30",
+      "low": "3165.20",
+      "close": "3184.96",
+      "volume": 1124418
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 61,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-12",
+      "open": "3184.96",
+      "high": "3192.99",
+      "low": "3145.82",
+      "close": "3165.51",
+      "volume": 1494595
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 62,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-13",
+      "open": "3165.51",
+      "high": "3207.77",
+      "low": "3161.38",
+      "close": "3186.50",
+      "volume": 1708892
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 63,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-14",
+      "open": "3186.50",
+      "high": "3196.65",
+      "low": "3130.38",
+      "close": "3149.66",
+      "volume": 2495826
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 64,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-15",
+      "open": "3149.66",
+      "high": "3153.88",
+      "low": "3118.09",
+      "close": "3128.36",
+      "volume": 1430337
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 65,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-16",
+      "open": "3128.36",
+      "high": "3171.40",
+      "low": "3114.00",
+      "close": "3151.32",
+      "volume": 1356932
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 66,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-17",
+      "open": "3151.32",
+      "high": "3160.72",
+      "low": "3139.73",
+      "close": "3144.59",
+      "volume": 1549364
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 67,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-18",
+      "open": "3144.59",
+      "high": "3158.29",
+      "low": "3109.40",
+      "close": "3119.34",
+      "volume": 1983406
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 68,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-19",
+      "open": "3119.34",
+      "high": "3167.88",
+      "low": "3096.99",
+      "close": "3149.43",
+      "volume": 2770916
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 69,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-20",
+      "open": "3149.43",
+      "high": "3199.43",
+      "low": "3137.99",
+      "close": "3191.76",
+      "volume": 1626189
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 70,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-21",
+      "open": "3191.76",
+      "high": "3195.44",
+      "low": "3140.47",
+      "close": "3164.12",
+      "volume": 2086053
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 71,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-22",
+      "open": "3164.12",
+      "high": "3186.22",
+      "low": "3138.17",
+      "close": "3148.62",
+      "volume": 1463266
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 72,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-23",
+      "open": "3148.62",
+      "high": "3150.00",
+      "low": "3125.85",
+      "close": "3149.50",
+      "volume": 1908103
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 73,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-24",
+      "open": "3149.50",
+      "high": "3149.94",
+      "low": "3117.12",
+      "close": "3136.51",
+      "volume": 1865083
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 74,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-25",
+      "open": "3136.51",
+      "high": "3152.69",
+      "low": "3090.55",
+      "close": "3101.80",
+      "volume": 2201306
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 75,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-26",
+      "open": "3101.80",
+      "high": "3123.58",
+      "low": "3072.60",
+      "close": "3078.42",
+      "volume": 1771626
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 76,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-27",
+      "open": "3078.42",
+      "high": "3123.27",
+      "low": "3057.85",
+      "close": "3122.97",
+      "volume": 2764591
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 77,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-28",
+      "open": "3122.97",
+      "high": "3155.55",
+      "low": "3111.22",
+      "close": "3145.08",
+      "volume": 1087872
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 78,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-29",
+      "open": "3145.08",
+      "high": "3174.62",
+      "low": "3125.34",
+      "close": "3153.75",
+      "volume": 1884803
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 79,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-30",
+      "open": "3153.75",
+      "high": "3170.88",
+      "low": "3113.58",
+      "close": "3121.45",
+      "volume": 1700298
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 80,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-08-31",
+      "open": "3121.45",
+      "high": "3135.04",
+      "low": "3099.28",
+      "close": "3126.32",
+      "volume": 1519437
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 81,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-01",
+      "open": "3126.32",
+      "high": "3160.67",
+      "low": "3125.02",
+      "close": "3159.91",
+      "volume": 2673337
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 82,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-02",
+      "open": "3159.91",
+      "high": "3175.49",
+      "low": "3115.28",
+      "close": "3134.03",
+      "volume": 2025868
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 83,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-03",
+      "open": "3134.03",
+      "high": "3146.25",
+      "low": "3114.34",
+      "close": "3140.30",
+      "volume": 1517028
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 84,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-04",
+      "open": "3140.30",
+      "high": "3143.33",
+      "low": "3125.92",
+      "close": "3136.72",
+      "volume": 1366715
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 85,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-05",
+      "open": "3136.72",
+      "high": "3179.24",
+      "low": "3131.81",
+      "close": "3164.79",
+      "volume": 2896438
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 86,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-06",
+      "open": "3164.79",
+      "high": "3182.61",
+      "low": "3149.09",
+      "close": "3180.33",
+      "volume": 1761956
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 87,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-07",
+      "open": "3180.33",
+      "high": "3202.45",
+      "low": "3159.27",
+      "close": "3169.06",
+      "volume": 1468446
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 88,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-08",
+      "open": "3169.06",
+      "high": "3174.44",
+      "low": "3129.01",
+      "close": "3138.29",
+      "volume": 2282182
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 89,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-09",
+      "open": "3138.29",
+      "high": "3160.01",
+      "low": "3104.93",
+      "close": "3122.74",
+      "volume": 1550898
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 90,
+    "fields": {
+      "ticker": 1,
+      "date": "2025-09-10",
+      "open": "3122.74",
+      "high": "3143.01",
+      "low": "3077.70",
+      "close": "3081.75",
+      "volume": 2287618
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 91,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-13",
+      "open": "3400.00",
+      "high": "3446.43",
+      "low": "3385.65",
+      "close": "3439.65",
+      "volume": 1579160
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 92,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-14",
+      "open": "3439.65",
+      "high": "3467.39",
+      "low": "3423.33",
+      "close": "3453.15",
+      "volume": 813542
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 93,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-15",
+      "open": "3453.15",
+      "high": "3456.35",
+      "low": "3405.03",
+      "close": "3412.79",
+      "volume": 1691984
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 94,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-16",
+      "open": "3412.79",
+      "high": "3418.86",
+      "low": "3394.82",
+      "close": "3397.87",
+      "volume": 1085950
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 95,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-17",
+      "open": "3397.87",
+      "high": "3410.52",
+      "low": "3376.98",
+      "close": "3377.95",
+      "volume": 1072393
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 96,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-18",
+      "open": "3377.95",
+      "high": "3396.99",
+      "low": "3360.45",
+      "close": "3391.63",
+      "volume": 777029
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 97,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-19",
+      "open": "3391.63",
+      "high": "3393.54",
+      "low": "3368.68",
+      "close": "3384.43",
+      "volume": 1111796
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 98,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-20",
+      "open": "3384.43",
+      "high": "3436.73",
+      "low": "3382.48",
+      "close": "3424.18",
+      "volume": 1482990
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 99,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-21",
+      "open": "3424.18",
+      "high": "3446.48",
+      "low": "3412.61",
+      "close": "3433.01",
+      "volume": 896063
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 100,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-22",
+      "open": "3433.01",
+      "high": "3439.34",
+      "low": "3393.20",
+      "close": "3402.19",
+      "volume": 1139140
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 101,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-23",
+      "open": "3402.19",
+      "high": "3424.22",
+      "low": "3398.14",
+      "close": "3409.38",
+      "volume": 827887
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 102,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-24",
+      "open": "3409.38",
+      "high": "3449.21",
+      "low": "3403.79",
+      "close": "3442.32",
+      "volume": 1072751
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 103,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-25",
+      "open": "3442.32",
+      "high": "3443.89",
+      "low": "3425.50",
+      "close": "3440.94",
+      "volume": 954002
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 104,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-26",
+      "open": "3440.94",
+      "high": "3446.01",
+      "low": "3433.98",
+      "close": "3436.72",
+      "volume": 929501
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 105,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-27",
+      "open": "3436.72",
+      "high": "3481.55",
+      "low": "3432.95",
+      "close": "3462.23",
+      "volume": 1287324
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 106,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-28",
+      "open": "3462.23",
+      "high": "3519.33",
+      "low": "3455.25",
+      "close": "3503.20",
+      "volume": 1054091
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 107,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-29",
+      "open": "3503.20",
+      "high": "3513.51",
+      "low": "3471.73",
+      "close": "3481.51",
+      "volume": 1319592
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 108,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-06-30",
+      "open": "3481.51",
+      "high": "3487.68",
+      "low": "3435.68",
+      "close": "3450.28",
+      "volume": 1373202
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 109,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-01",
+      "open": "3450.28",
+      "high": "3465.34",
+      "low": "3430.97",
+      "close": "3462.12",
+      "volume": 806431
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 110,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-02",
+      "open": "3462.12",
+      "high": "3499.94",
+      "low": "3458.61",
+      "close": "3494.48",
+      "volume": 1838029
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 111,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-03",
+      "open": "3494.48",
+      "high": "3518.28",
+      "low": "3490.70",
+      "close": "3504.07",
+      "volume": 999119
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 112,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-04",
+      "open": "3504.07",
+      "high": "3511.81",
+      "low": "3493.64",
+      "close": "3508.08",
+      "volume": 1002958
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 113,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-05",
+      "open": "3508.08",
+      "high": "3519.91",
+      "low": "3495.98",
+      "close": "3504.72",
+      "volume": 995394
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 114,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-06",
+      "open": "3504.72",
+      "high": "3547.44",
+      "low": "3484.06",
+      "close": "3538.19",
+      "volume": 1079169
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 115,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-07",
+      "open": "3538.19",
+      "high": "3581.92",
+      "low": "3536.26",
+      "close": "3573.19",
+      "volume": 1863616
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 116,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-08",
+      "open": "3573.19",
+      "high": "3630.32",
+      "low": "3561.46",
+      "close": "3615.46",
+      "volume": 1897248
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 117,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-09",
+      "open": "3615.46",
+      "high": "3618.02",
+      "low": "3588.06",
+      "close": "3588.24",
+      "volume": 1380366
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 118,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-10",
+      "open": "3588.24",
+      "high": "3609.22",
+      "low": "3578.76",
+      "close": "3599.95",
+      "volume": 888114
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 119,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-11",
+      "open": "3599.95",
+      "high": "3608.86",
+      "low": "3589.23",
+      "close": "3589.98",
+      "volume": 784573
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 120,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-12",
+      "open": "3589.98",
+      "high": "3609.39",
+      "low": "3574.78",
+      "close": "3606.11",
+      "volume": 1051866
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 121,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-13",
+      "open": "3606.11",
+      "high": "3621.77",
+      "low": "3556.90",
+      "close": "3571.31",
+      "volume": 1222124
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 122,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-14",
+      "open": "3571.31",
+      "high": "3587.79",
+      "low": "3566.69",
+      "close": "3577.59",
+      "volume": 891445
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 123,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-15",
+      "open": "3577.59",
+      "high": "3592.27",
+      "low": "3544.96",
+      "close": "3561.72",
+      "volume": 870171
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 124,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-16",
+      "open": "3561.72",
+      "high": "3598.34",
+      "low": "3550.06",
+      "close": "3591.48",
+      "volume": 1417481
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 125,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-17",
+      "open": "3591.48",
+      "high": "3636.78",
+      "low": "3585.00",
+      "close": "3615.89",
+      "volume": 1659621
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 126,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-18",
+      "open": "3615.89",
+      "high": "3616.66",
+      "low": "3592.77",
+      "close": "3603.65",
+      "volume": 989720
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 127,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-19",
+      "open": "3603.65",
+      "high": "3606.98",
+      "low": "3599.86",
+      "close": "3604.66",
+      "volume": 1109904
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 128,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-20",
+      "open": "3604.66",
+      "high": "3605.62",
+      "low": "3555.58",
+      "close": "3565.86",
+      "volume": 1218293
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 129,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-21",
+      "open": "3565.86",
+      "high": "3579.71",
+      "low": "3545.00",
+      "close": "3565.42",
+      "volume": 906184
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 130,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-22",
+      "open": "3565.42",
+      "high": "3573.29",
+      "low": "3509.85",
+      "close": "3530.97",
+      "volume": 1480024
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 131,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-23",
+      "open": "3530.97",
+      "high": "3547.94",
+      "low": "3514.29",
+      "close": "3534.14",
+      "volume": 1144997
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 132,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-24",
+      "open": "3534.14",
+      "high": "3573.78",
+      "low": "3526.57",
+      "close": "3553.53",
+      "volume": 1238408
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 133,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-25",
+      "open": "3553.53",
+      "high": "3570.68",
+      "low": "3537.63",
+      "close": "3556.57",
+      "volume": 712181
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 134,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-26",
+      "open": "3556.57",
+      "high": "3595.17",
+      "low": "3555.62",
+      "close": "3581.46",
+      "volume": 1402598
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 135,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-27",
+      "open": "3581.46",
+      "high": "3585.67",
+      "low": "3563.13",
+      "close": "3580.10",
+      "volume": 1001925
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 136,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-28",
+      "open": "3580.10",
+      "high": "3582.89",
+      "low": "3547.60",
+      "close": "3560.22",
+      "volume": 819205
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 137,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-29",
+      "open": "3560.22",
+      "high": "3580.15",
+      "low": "3524.76",
+      "close": "3539.88",
+      "volume": 974958
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 138,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-30",
+      "open": "3539.88",
+      "high": "3569.99",
+      "low": "3531.30",
+      "close": "3554.61",
+      "volume": 1227038
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 139,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-07-31",
+      "open": "3554.61",
+      "high": "3567.16",
+      "low": "3542.37",
+      "close": "3565.43",
+      "volume": 798445
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 140,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-01",
+      "open": "3565.43",
+      "high": "3574.08",
+      "low": "3529.66",
+      "close": "3530.89",
+      "volume": 1293999
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 141,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-02",
+      "open": "3530.89",
+      "high": "3537.51",
+      "low": "3510.19",
+      "close": "3514.52",
+      "volume": 988415
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 142,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-03",
+      "open": "3514.52",
+      "high": "3549.05",
+      "low": "3499.74",
+      "close": "3539.92",
+      "volume": 1617179
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 143,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-04",
+      "open": "3539.92",
+      "high": "3595.91",
+      "low": "3537.32",
+      "close": "3576.95",
+      "volume": 1139991
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 144,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-05",
+      "open": "3576.95",
+      "high": "3577.16",
+      "low": "3523.15",
+      "close": "3536.48",
+      "volume": 1276653
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 145,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-06",
+      "open": "3536.48",
+      "high": "3546.07",
+      "low": "3516.74",
+      "close": "3523.69",
+      "volume": 812947
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 146,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-07",
+      "open": "3523.69",
+      "high": "3524.33",
+      "low": "3495.85",
+      "close": "3503.91",
+      "volume": 725967
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 147,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-08",
+      "open": "3503.91",
+      "high": "3526.45",
+      "low": "3496.98",
+      "close": "3512.75",
+      "volume": 750262
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 148,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-09",
+      "open": "3512.75",
+      "high": "3519.08",
+      "low": "3470.80",
+      "close": "3487.84",
+      "volume": 1612035
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 149,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-10",
+      "open": "3487.84",
+      "high": "3489.59",
+      "low": "3453.15",
+      "close": "3460.92",
+      "volume": 1660559
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 150,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-11",
+      "open": "3460.92",
+      "high": "3491.59",
+      "low": "3440.42",
+      "close": "3488.19",
+      "volume": 1360492
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 151,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-12",
+      "open": "3488.19",
+      "high": "3493.58",
+      "low": "3440.07",
+      "close": "3454.04",
+      "volume": 1344551
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 152,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-13",
+      "open": "3454.04",
+      "high": "3464.98",
+      "low": "3450.31",
+      "close": "3452.93",
+      "volume": 1007170
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 153,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-14",
+      "open": "3452.93",
+      "high": "3476.15",
+      "low": "3436.63",
+      "close": "3471.96",
+      "volume": 1249623
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 154,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-15",
+      "open": "3471.96",
+      "high": "3480.19",
+      "low": "3451.60",
+      "close": "3476.66",
+      "volume": 895922
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 155,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-16",
+      "open": "3476.66",
+      "high": "3494.65",
+      "low": "3444.93",
+      "close": "3461.33",
+      "volume": 1115361
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 156,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-17",
+      "open": "3461.33",
+      "high": "3487.68",
+      "low": "3456.52",
+      "close": "3470.86",
+      "volume": 795800
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 157,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-18",
+      "open": "3470.86",
+      "high": "3472.99",
+      "low": "3448.33",
+      "close": "3448.35",
+      "volume": 1702998
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 158,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-19",
+      "open": "3448.35",
+      "high": "3458.06",
+      "low": "3435.54",
+      "close": "3455.65",
+      "volume": 824574
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 159,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-20",
+      "open": "3455.65",
+      "high": "3466.61",
+      "low": "3445.74",
+      "close": "3449.55",
+      "volume": 1163137
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 160,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-21",
+      "open": "3449.55",
+      "high": "3463.95",
+      "low": "3408.09",
+      "close": "3428.39",
+      "volume": 1605626
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 161,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-22",
+      "open": "3428.39",
+      "high": "3436.17",
+      "low": "3395.76",
+      "close": "3408.35",
+      "volume": 1219556
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 162,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-23",
+      "open": "3408.35",
+      "high": "3417.82",
+      "low": "3396.20",
+      "close": "3404.54",
+      "volume": 984419
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 163,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-24",
+      "open": "3404.54",
+      "high": "3432.82",
+      "low": "3400.27",
+      "close": "3432.53",
+      "volume": 1351313
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 164,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-25",
+      "open": "3432.53",
+      "high": "3444.47",
+      "low": "3383.97",
+      "close": "3399.76",
+      "volume": 1328416
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 165,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-26",
+      "open": "3399.76",
+      "high": "3406.40",
+      "low": "3384.46",
+      "close": "3388.05",
+      "volume": 861876
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 166,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-27",
+      "open": "3388.05",
+      "high": "3394.31",
+      "low": "3344.87",
+      "close": "3363.81",
+      "volume": 1641439
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 167,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-28",
+      "open": "3363.81",
+      "high": "3378.68",
+      "low": "3347.92",
+      "close": "3358.02",
+      "volume": 739496
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 168,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-29",
+      "open": "3358.02",
+      "high": "3369.45",
+      "low": "3303.64",
+      "close": "3319.70",
+      "volume": 1856767
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 169,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-30",
+      "open": "3319.70",
+      "high": "3372.59",
+      "low": "3318.96",
+      "close": "3354.93",
+      "volume": 1507006
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 170,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-08-31",
+      "open": "3354.93",
+      "high": "3358.95",
+      "low": "3349.59",
+      "close": "3354.37",
+      "volume": 1262743
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 171,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-01",
+      "open": "3354.37",
+      "high": "3375.17",
+      "low": "3343.43",
+      "close": "3362.02",
+      "volume": 1212821
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 172,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-02",
+      "open": "3362.02",
+      "high": "3375.54",
+      "low": "3346.34",
+      "close": "3360.66",
+      "volume": 858536
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 173,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-03",
+      "open": "3360.66",
+      "high": "3390.00",
+      "low": "3346.34",
+      "close": "3387.74",
+      "volume": 1784364
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 174,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-04",
+      "open": "3387.74",
+      "high": "3398.91",
+      "low": "3341.44",
+      "close": "3360.75",
+      "volume": 1101390
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 175,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-05",
+      "open": "3360.75",
+      "high": "3401.51",
+      "low": "3356.95",
+      "close": "3398.43",
+      "volume": 1451069
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 176,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-06",
+      "open": "3398.43",
+      "high": "3398.68",
+      "low": "3357.01",
+      "close": "3357.93",
+      "volume": 1258640
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 177,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-07",
+      "open": "3357.93",
+      "high": "3373.98",
+      "low": "3319.48",
+      "close": "3328.15",
+      "volume": 1656410
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 178,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-08",
+      "open": "3328.15",
+      "high": "3328.29",
+      "low": "3313.49",
+      "close": "3324.15",
+      "volume": 818784
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 179,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-09",
+      "open": "3324.15",
+      "high": "3338.14",
+      "low": "3316.48",
+      "close": "3334.89",
+      "volume": 876969
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 180,
+    "fields": {
+      "ticker": 2,
+      "date": "2025-09-10",
+      "open": "3334.89",
+      "high": "3337.71",
+      "low": "3290.39",
+      "close": "3301.32",
+      "volume": 1662583
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 181,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-13",
+      "open": "1650.00",
+      "high": "1667.81",
+      "low": "1648.10",
+      "close": "1662.91",
+      "volume": 2441824
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 182,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-14",
+      "open": "1662.91",
+      "high": "1663.52",
+      "low": "1652.47",
+      "close": "1661.39",
+      "volume": 1589981
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 183,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-15",
+      "open": "1661.39",
+      "high": "1671.36",
+      "low": "1651.68",
+      "close": "1664.05",
+      "volume": 1677692
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 184,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-16",
+      "open": "1664.05",
+      "high": "1676.23",
+      "low": "1654.47",
+      "close": "1670.75",
+      "volume": 1514642
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 185,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-17",
+      "open": "1670.75",
+      "high": "1677.86",
+      "low": "1648.28",
+      "close": "1652.11",
+      "volume": 3568221
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 186,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-18",
+      "open": "1652.11",
+      "high": "1675.89",
+      "low": "1643.49",
+      "close": "1666.95",
+      "volume": 2892521
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 187,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-19",
+      "open": "1666.95",
+      "high": "1667.74",
+      "low": "1647.81",
+      "close": "1657.01",
+      "volume": 1814349
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 188,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-20",
+      "open": "1657.01",
+      "high": "1675.71",
+      "low": "1646.60",
+      "close": "1667.04",
+      "volume": 2528996
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 189,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-21",
+      "open": "1667.04",
+      "high": "1668.67",
+      "low": "1656.56",
+      "close": "1664.24",
+      "volume": 2561169
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 190,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-22",
+      "open": "1664.24",
+      "high": "1685.36",
+      "low": "1655.49",
+      "close": "1681.92",
+      "volume": 2179438
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 191,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-23",
+      "open": "1681.92",
+      "high": "1697.95",
+      "low": "1673.49",
+      "close": "1695.49",
+      "volume": 3308010
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 192,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-24",
+      "open": "1695.49",
+      "high": "1698.09",
+      "low": "1685.19",
+      "close": "1694.79",
+      "volume": 1645827
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 193,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-25",
+      "open": "1694.79",
+      "high": "1720.09",
+      "low": "1688.62",
+      "close": "1709.62",
+      "volume": 2424094
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 194,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-26",
+      "open": "1709.62",
+      "high": "1720.14",
+      "low": "1682.21",
+      "close": "1691.33",
+      "volume": 3419989
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 195,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-27",
+      "open": "1691.33",
+      "high": "1692.01",
+      "low": "1679.32",
+      "close": "1686.36",
+      "volume": 2341844
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 196,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-28",
+      "open": "1686.36",
+      "high": "1689.84",
+      "low": "1685.85",
+      "close": "1689.06",
+      "volume": 1429695
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 197,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-29",
+      "open": "1689.06",
+      "high": "1694.54",
+      "low": "1675.80",
+      "close": "1676.71",
+      "volume": 3550978
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 198,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-06-30",
+      "open": "1676.71",
+      "high": "1680.33",
+      "low": "1657.12",
+      "close": "1659.26",
+      "volume": 3400726
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 199,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-01",
+      "open": "1659.26",
+      "high": "1680.38",
+      "low": "1656.45",
+      "close": "1672.28",
+      "volume": 3320432
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 200,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-02",
+      "open": "1672.28",
+      "high": "1696.79",
+      "low": "1670.99",
+      "close": "1693.49",
+      "volume": 2666598
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 201,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-03",
+      "open": "1693.49",
+      "high": "1697.81",
+      "low": "1684.35",
+      "close": "1696.73",
+      "volume": 1921505
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 202,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-04",
+      "open": "1696.73",
+      "high": "1718.27",
+      "low": "1696.15",
+      "close": "1717.77",
+      "volume": 2359296
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 203,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-05",
+      "open": "1717.77",
+      "high": "1737.95",
+      "low": "1712.58",
+      "close": "1727.46",
+      "volume": 1933413
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 204,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-06",
+      "open": "1727.46",
+      "high": "1757.35",
+      "low": "1717.02",
+      "close": "1746.70",
+      "volume": 3639722
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 205,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-07",
+      "open": "1746.70",
+      "high": "1753.83",
+      "low": "1744.55",
+      "close": "1752.52",
+      "volume": 1464339
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 206,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-08",
+      "open": "1752.52",
+      "high": "1756.99",
+      "low": "1741.45",
+      "close": "1745.21",
+      "volume": 2452878
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 207,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-09",
+      "open": "1745.21",
+      "high": "1754.54",
+      "low": "1741.48",
+      "close": "1753.27",
+      "volume": 2485708
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 208,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-10",
+      "open": "1753.27",
+      "high": "1756.20",
+      "low": "1741.70",
+      "close": "1743.01",
+      "volume": 2160126
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 209,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-11",
+      "open": "1743.01",
+      "high": "1762.90",
+      "low": "1734.11",
+      "close": "1752.33",
+      "volume": 2450606
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 210,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-12",
+      "open": "1752.33",
+      "high": "1776.40",
+      "low": "1741.71",
+      "close": "1765.58",
+      "volume": 2255382
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 211,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-13",
+      "open": "1765.58",
+      "high": "1774.64",
+      "low": "1739.98",
+      "close": "1743.74",
+      "volume": 2557905
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 212,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-14",
+      "open": "1743.74",
+      "high": "1754.89",
+      "low": "1722.62",
+      "close": "1724.09",
+      "volume": 3035135
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 213,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-15",
+      "open": "1724.09",
+      "high": "1750.63",
+      "low": "1713.89",
+      "close": "1743.75",
+      "volume": 3140475
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 214,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-16",
+      "open": "1743.75",
+      "high": "1757.64",
+      "low": "1740.46",
+      "close": "1753.83",
+      "volume": 2224824
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 215,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-17",
+      "open": "1753.83",
+      "high": "1778.89",
+      "low": "1750.07",
+      "close": "1774.85",
+      "volume": 2747782
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 216,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-18",
+      "open": "1774.85",
+      "high": "1805.30",
+      "low": "1763.83",
+      "close": "1793.66",
+      "volume": 3332800
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 217,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-19",
+      "open": "1793.66",
+      "high": "1795.69",
+      "low": "1774.40",
+      "close": "1774.60",
+      "volume": 3006715
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 218,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-20",
+      "open": "1774.60",
+      "high": "1784.06",
+      "low": "1748.26",
+      "close": "1758.81",
+      "volume": 2604133
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 219,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-21",
+      "open": "1758.81",
+      "high": "1773.29",
+      "low": "1754.76",
+      "close": "1763.38",
+      "volume": 2389029
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 220,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-22",
+      "open": "1763.38",
+      "high": "1770.78",
+      "low": "1760.45",
+      "close": "1762.48",
+      "volume": 2086252
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 221,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-23",
+      "open": "1762.48",
+      "high": "1790.06",
+      "low": "1760.88",
+      "close": "1780.16",
+      "volume": 3144460
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 222,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-24",
+      "open": "1780.16",
+      "high": "1805.45",
+      "low": "1768.98",
+      "close": "1799.56",
+      "volume": 2171432
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 223,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-25",
+      "open": "1799.56",
+      "high": "1802.34",
+      "low": "1797.40",
+      "close": "1797.52",
+      "volume": 2481544
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 224,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-26",
+      "open": "1797.52",
+      "high": "1802.94",
+      "low": "1775.93",
+      "close": "1779.16",
+      "volume": 3777298
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 225,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-27",
+      "open": "1779.16",
+      "high": "1788.02",
+      "low": "1752.41",
+      "close": "1763.37",
+      "volume": 2591355
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 226,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-28",
+      "open": "1763.37",
+      "high": "1764.01",
+      "low": "1749.64",
+      "close": "1760.66",
+      "volume": 2085805
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 227,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-29",
+      "open": "1760.66",
+      "high": "1772.60",
+      "low": "1759.20",
+      "close": "1769.05",
+      "volume": 1578965
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 228,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-30",
+      "open": "1769.05",
+      "high": "1776.61",
+      "low": "1744.03",
+      "close": "1746.70",
+      "volume": 3636541
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 229,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-07-31",
+      "open": "1746.70",
+      "high": "1779.58",
+      "low": "1741.43",
+      "close": "1769.08",
+      "volume": 2528678
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 230,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-01",
+      "open": "1769.08",
+      "high": "1771.29",
+      "low": "1759.51",
+      "close": "1768.36",
+      "volume": 2003065
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 231,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-02",
+      "open": "1768.36",
+      "high": "1770.36",
+      "low": "1747.21",
+      "close": "1751.08",
+      "volume": 3434747
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 232,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-03",
+      "open": "1751.08",
+      "high": "1780.35",
+      "low": "1746.64",
+      "close": "1772.29",
+      "volume": 3407936
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 233,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-04",
+      "open": "1772.29",
+      "high": "1776.94",
+      "low": "1761.37",
+      "close": "1768.64",
+      "volume": 1411232
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 234,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-05",
+      "open": "1768.64",
+      "high": "1776.64",
+      "low": "1753.34",
+      "close": "1755.11",
+      "volume": 2118965
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 235,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-06",
+      "open": "1755.11",
+      "high": "1768.48",
+      "low": "1748.71",
+      "close": "1765.36",
+      "volume": 1640061
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 236,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-07",
+      "open": "1765.36",
+      "high": "1770.05",
+      "low": "1744.09",
+      "close": "1754.27",
+      "volume": 1821476
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 237,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-08",
+      "open": "1754.27",
+      "high": "1781.74",
+      "low": "1749.60",
+      "close": "1770.88",
+      "volume": 2559803
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 238,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-09",
+      "open": "1770.88",
+      "high": "1802.79",
+      "low": "1760.79",
+      "close": "1793.50",
+      "volume": 3842402
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 239,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-10",
+      "open": "1793.50",
+      "high": "1795.25",
+      "low": "1760.94",
+      "close": "1772.03",
+      "volume": 3873690
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 240,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-11",
+      "open": "1772.03",
+      "high": "1781.27",
+      "low": "1750.13",
+      "close": "1752.39",
+      "volume": 3866256
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 241,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-12",
+      "open": "1752.39",
+      "high": "1753.76",
+      "low": "1726.37",
+      "close": "1737.53",
+      "volume": 3605437
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 242,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-13",
+      "open": "1737.53",
+      "high": "1740.04",
+      "low": "1706.11",
+      "close": "1716.17",
+      "volume": 2762804
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 243,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-14",
+      "open": "1716.17",
+      "high": "1724.68",
+      "low": "1713.47",
+      "close": "1717.36",
+      "volume": 2107165
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 244,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-15",
+      "open": "1717.36",
+      "high": "1734.54",
+      "low": "1716.34",
+      "close": "1733.08",
+      "volume": 3562309
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 245,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-16",
+      "open": "1733.08",
+      "high": "1740.68",
+      "low": "1732.31",
+      "close": "1740.50",
+      "volume": 1564778
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 246,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-17",
+      "open": "1740.50",
+      "high": "1766.40",
+      "low": "1729.76",
+      "close": "1756.00",
+      "volume": 2909832
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 247,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-18",
+      "open": "1756.00",
+      "high": "1775.53",
+      "low": "1755.07",
+      "close": "1774.89",
+      "volume": 3090201
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 248,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-19",
+      "open": "1774.89",
+      "high": "1793.98",
+      "low": "1767.99",
+      "close": "1790.82",
+      "volume": 3337969
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 249,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-20",
+      "open": "1790.82",
+      "high": "1794.96",
+      "low": "1776.96",
+      "close": "1785.12",
+      "volume": 2035218
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 250,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-21",
+      "open": "1785.12",
+      "high": "1794.76",
+      "low": "1783.56",
+      "close": "1790.86",
+      "volume": 1547851
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 251,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-22",
+      "open": "1790.86",
+      "high": "1809.18",
+      "low": "1781.94",
+      "close": "1807.11",
+      "volume": 3287555
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 252,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-23",
+      "open": "1807.11",
+      "high": "1836.75",
+      "low": "1805.90",
+      "close": "1830.48",
+      "volume": 3124229
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 253,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-24",
+      "open": "1830.48",
+      "high": "1853.30",
+      "low": "1823.02",
+      "close": "1850.42",
+      "volume": 3160155
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 254,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-25",
+      "open": "1850.42",
+      "high": "1857.49",
+      "low": "1830.56",
+      "close": "1831.45",
+      "volume": 2992375
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 255,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-26",
+      "open": "1831.45",
+      "high": "1842.10",
+      "low": "1826.14",
+      "close": "1832.27",
+      "volume": 2378599
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 256,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-27",
+      "open": "1832.27",
+      "high": "1841.46",
+      "low": "1805.91",
+      "close": "1814.12",
+      "volume": 3034270
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 257,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-28",
+      "open": "1814.12",
+      "high": "1817.13",
+      "low": "1781.38",
+      "close": "1792.56",
+      "volume": 2190145
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 258,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-29",
+      "open": "1792.56",
+      "high": "1796.78",
+      "low": "1767.18",
+      "close": "1775.47",
+      "volume": 2499424
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 259,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-30",
+      "open": "1775.47",
+      "high": "1779.77",
+      "low": "1761.18",
+      "close": "1767.97",
+      "volume": 2190092
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 260,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-08-31",
+      "open": "1767.97",
+      "high": "1780.38",
+      "low": "1758.62",
+      "close": "1778.45",
+      "volume": 2417744
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 261,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-01",
+      "open": "1778.45",
+      "high": "1787.51",
+      "low": "1775.17",
+      "close": "1787.17",
+      "volume": 1748102
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 262,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-02",
+      "open": "1787.17",
+      "high": "1798.37",
+      "low": "1769.21",
+      "close": "1780.28",
+      "volume": 1624094
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 263,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-03",
+      "open": "1780.28",
+      "high": "1802.86",
+      "low": "1772.65",
+      "close": "1800.10",
+      "volume": 3802897
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 264,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-04",
+      "open": "1800.10",
+      "high": "1806.61",
+      "low": "1778.86",
+      "close": "1787.98",
+      "volume": 3821198
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 265,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-05",
+      "open": "1787.98",
+      "high": "1814.63",
+      "low": "1781.97",
+      "close": "1807.28",
+      "volume": 3316096
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 266,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-06",
+      "open": "1807.28",
+      "high": "1820.43",
+      "low": "1803.11",
+      "close": "1810.79",
+      "volume": 2324826
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 267,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-07",
+      "open": "1810.79",
+      "high": "1818.34",
+      "low": "1801.25",
+      "close": "1809.72",
+      "volume": 2254271
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 268,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-08",
+      "open": "1809.72",
+      "high": "1812.60",
+      "low": "1778.49",
+      "close": "1787.76",
+      "volume": 2224710
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 269,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-09",
+      "open": "1787.76",
+      "high": "1807.07",
+      "low": "1776.46",
+      "close": "1796.19",
+      "volume": 1490736
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 270,
+    "fields": {
+      "ticker": 3,
+      "date": "2025-09-10",
+      "open": "1796.19",
+      "high": "1805.16",
+      "low": "1785.64",
+      "close": "1796.95",
+      "volume": 1996802
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 271,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-13",
+      "open": "1550.00",
+      "high": "1552.90",
+      "low": "1530.90",
+      "close": "1541.22",
+      "volume": 952610
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 272,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-14",
+      "open": "1541.22",
+      "high": "1562.33",
+      "low": "1539.62",
+      "close": "1560.68",
+      "volume": 1501215
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 273,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-15",
+      "open": "1560.68",
+      "high": "1564.94",
+      "low": "1542.67",
+      "close": "1544.88",
+      "volume": 1863183
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 274,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-16",
+      "open": "1544.88",
+      "high": "1550.65",
+      "low": "1520.27",
+      "close": "1529.69",
+      "volume": 1741112
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 275,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-17",
+      "open": "1529.69",
+      "high": "1542.30",
+      "low": "1520.17",
+      "close": "1539.14",
+      "volume": 1510267
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 276,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-18",
+      "open": "1539.14",
+      "high": "1555.31",
+      "low": "1528.99",
+      "close": "1554.75",
+      "volume": 2104892
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 277,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-19",
+      "open": "1554.75",
+      "high": "1560.75",
+      "low": "1539.15",
+      "close": "1547.69",
+      "volume": 1315630
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 278,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-20",
+      "open": "1547.69",
+      "high": "1571.00",
+      "low": "1547.37",
+      "close": "1562.33",
+      "volume": 1481256
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 279,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-21",
+      "open": "1562.33",
+      "high": "1580.78",
+      "low": "1554.60",
+      "close": "1569.84",
+      "volume": 1420845
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 280,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-22",
+      "open": "1569.84",
+      "high": "1589.13",
+      "low": "1559.05",
+      "close": "1581.10",
+      "volume": 1399029
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 281,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-23",
+      "open": "1581.10",
+      "high": "1583.10",
+      "low": "1562.29",
+      "close": "1566.73",
+      "volume": 1653556
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 282,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-24",
+      "open": "1566.73",
+      "high": "1570.28",
+      "low": "1565.01",
+      "close": "1566.57",
+      "volume": 1267013
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 283,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-25",
+      "open": "1566.57",
+      "high": "1576.33",
+      "low": "1553.07",
+      "close": "1558.32",
+      "volume": 1319620
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 284,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-26",
+      "open": "1558.32",
+      "high": "1563.36",
+      "low": "1536.74",
+      "close": "1545.92",
+      "volume": 1660589
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 285,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-27",
+      "open": "1545.92",
+      "high": "1549.12",
+      "low": "1539.30",
+      "close": "1540.63",
+      "volume": 1495382
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 286,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-28",
+      "open": "1540.63",
+      "high": "1551.68",
+      "low": "1539.24",
+      "close": "1541.98",
+      "volume": 1408923
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 287,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-29",
+      "open": "1541.98",
+      "high": "1559.59",
+      "low": "1536.42",
+      "close": "1557.54",
+      "volume": 1518767
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 288,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-06-30",
+      "open": "1557.54",
+      "high": "1561.93",
+      "low": "1546.60",
+      "close": "1552.32",
+      "volume": 853087
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 289,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-01",
+      "open": "1552.32",
+      "high": "1553.98",
+      "low": "1526.85",
+      "close": "1535.66",
+      "volume": 2164206
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 290,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-02",
+      "open": "1535.66",
+      "high": "1551.92",
+      "low": "1530.46",
+      "close": "1541.64",
+      "volume": 1064194
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 291,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-03",
+      "open": "1541.64",
+      "high": "1551.87",
+      "low": "1524.55",
+      "close": "1535.07",
+      "volume": 966781
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 292,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-04",
+      "open": "1535.07",
+      "high": "1544.94",
+      "low": "1528.07",
+      "close": "1543.75",
+      "volume": 1363697
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 293,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-05",
+      "open": "1543.75",
+      "high": "1556.55",
+      "low": "1535.85",
+      "close": "1548.60",
+      "volume": 1028201
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 294,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-06",
+      "open": "1548.60",
+      "high": "1552.96",
+      "low": "1527.52",
+      "close": "1528.38",
+      "volume": 2061248
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 295,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-07",
+      "open": "1528.38",
+      "high": "1544.72",
+      "low": "1525.03",
+      "close": "1539.20",
+      "volume": 1959541
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 296,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-08",
+      "open": "1539.20",
+      "high": "1544.37",
+      "low": "1515.50",
+      "close": "1519.10",
+      "volume": 2150960
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 297,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-09",
+      "open": "1519.10",
+      "high": "1528.68",
+      "low": "1509.29",
+      "close": "1526.30",
+      "volume": 1044325
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 298,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-10",
+      "open": "1526.30",
+      "high": "1533.88",
+      "low": "1521.26",
+      "close": "1530.94",
+      "volume": 1503392
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 299,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-11",
+      "open": "1530.94",
+      "high": "1538.29",
+      "low": "1509.83",
+      "close": "1519.41",
+      "volume": 2024924
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 300,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-12",
+      "open": "1519.41",
+      "high": "1531.56",
+      "low": "1509.90",
+      "close": "1530.93",
+      "volume": 2208400
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 301,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-13",
+      "open": "1530.93",
+      "high": "1552.24",
+      "low": "1521.87",
+      "close": "1547.45",
+      "volume": 1803914
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 302,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-14",
+      "open": "1547.45",
+      "high": "1553.16",
+      "low": "1541.73",
+      "close": "1552.29",
+      "volume": 1473176
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 303,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-15",
+      "open": "1552.29",
+      "high": "1560.54",
+      "low": "1531.94",
+      "close": "1542.25",
+      "volume": 1550748
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 304,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-16",
+      "open": "1542.25",
+      "high": "1550.85",
+      "low": "1517.20",
+      "close": "1525.51",
+      "volume": 1262275
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 305,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-17",
+      "open": "1525.51",
+      "high": "1537.36",
+      "low": "1516.64",
+      "close": "1532.45",
+      "volume": 880415
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 306,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-18",
+      "open": "1532.45",
+      "high": "1539.97",
+      "low": "1513.06",
+      "close": "1519.74",
+      "volume": 1546170
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 307,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-19",
+      "open": "1519.74",
+      "high": "1521.55",
+      "low": "1503.67",
+      "close": "1507.64",
+      "volume": 2229762
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 308,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-20",
+      "open": "1507.64",
+      "high": "1507.79",
+      "low": "1490.39",
+      "close": "1499.09",
+      "volume": 1160037
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 309,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-21",
+      "open": "1499.09",
+      "high": "1508.89",
+      "low": "1472.52",
+      "close": "1478.91",
+      "volume": 1514907
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 310,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-22",
+      "open": "1478.91",
+      "high": "1501.23",
+      "low": "1471.39",
+      "close": "1492.89",
+      "volume": 2288128
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 311,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-23",
+      "open": "1492.89",
+      "high": "1499.05",
+      "low": "1481.45",
+      "close": "1481.95",
+      "volume": 1342379
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 312,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-24",
+      "open": "1481.95",
+      "high": "1501.03",
+      "low": "1481.92",
+      "close": "1497.66",
+      "volume": 1432012
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 313,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-25",
+      "open": "1497.66",
+      "high": "1499.26",
+      "low": "1483.00",
+      "close": "1492.58",
+      "volume": 914450
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 314,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-26",
+      "open": "1492.58",
+      "high": "1513.60",
+      "low": "1485.07",
+      "close": "1512.64",
+      "volume": 2056948
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 315,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-27",
+      "open": "1512.64",
+      "high": "1518.00",
+      "low": "1501.45",
+      "close": "1507.72",
+      "volume": 1393279
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 316,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-28",
+      "open": "1507.72",
+      "high": "1515.05",
+      "low": "1503.12",
+      "close": "1504.36",
+      "volume": 1297745
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 317,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-29",
+      "open": "1504.36",
+      "high": "1528.45",
+      "low": "1497.56",
+      "close": "1519.63",
+      "volume": 1678909
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 318,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-30",
+      "open": "1519.63",
+      "high": "1541.89",
+      "low": "1510.27",
+      "close": "1534.26",
+      "volume": 2256772
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 319,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-07-31",
+      "open": "1534.26",
+      "high": "1552.27",
+      "low": "1534.14",
+      "close": "1544.57",
+      "volume": 1192115
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 320,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-01",
+      "open": "1544.57",
+      "high": "1571.34",
+      "low": "1536.72",
+      "close": "1564.96",
+      "volume": 2012676
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 321,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-02",
+      "open": "1564.96",
+      "high": "1588.82",
+      "low": "1558.72",
+      "close": "1578.52",
+      "volume": 1620943
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 322,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-03",
+      "open": "1578.52",
+      "high": "1583.23",
+      "low": "1561.78",
+      "close": "1566.66",
+      "volume": 1667111
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 323,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-04",
+      "open": "1566.66",
+      "high": "1572.71",
+      "low": "1554.89",
+      "close": "1560.79",
+      "volume": 1450948
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 324,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-05",
+      "open": "1560.79",
+      "high": "1569.46",
+      "low": "1548.29",
+      "close": "1549.32",
+      "volume": 1417233
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 325,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-06",
+      "open": "1549.32",
+      "high": "1566.60",
+      "low": "1540.51",
+      "close": "1558.87",
+      "volume": 1134860
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 326,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-07",
+      "open": "1558.87",
+      "high": "1581.41",
+      "low": "1548.91",
+      "close": "1572.00",
+      "volume": 1784529
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 327,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-08",
+      "open": "1572.00",
+      "high": "1581.98",
+      "low": "1567.35",
+      "close": "1568.87",
+      "volume": 970087
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 328,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-09",
+      "open": "1568.87",
+      "high": "1573.24",
+      "low": "1561.41",
+      "close": "1569.18",
+      "volume": 962544
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 329,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-10",
+      "open": "1569.18",
+      "high": "1572.69",
+      "low": "1548.22",
+      "close": "1555.17",
+      "volume": 1579434
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 330,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-11",
+      "open": "1555.17",
+      "high": "1561.17",
+      "low": "1535.68",
+      "close": "1538.40",
+      "volume": 1912816
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 331,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-12",
+      "open": "1538.40",
+      "high": "1548.51",
+      "low": "1535.82",
+      "close": "1540.73",
+      "volume": 1197773
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 332,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-13",
+      "open": "1540.73",
+      "high": "1543.84",
+      "low": "1523.09",
+      "close": "1533.65",
+      "volume": 1256446
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 333,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-14",
+      "open": "1533.65",
+      "high": "1542.32",
+      "low": "1520.31",
+      "close": "1526.90",
+      "volume": 1461453
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 334,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-15",
+      "open": "1526.90",
+      "high": "1534.84",
+      "low": "1521.08",
+      "close": "1531.85",
+      "volume": 1013573
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 335,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-16",
+      "open": "1531.85",
+      "high": "1540.60",
+      "low": "1527.47",
+      "close": "1532.97",
+      "volume": 870549
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 336,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-17",
+      "open": "1532.97",
+      "high": "1539.89",
+      "low": "1505.45",
+      "close": "1514.72",
+      "volume": 1678031
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 337,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-18",
+      "open": "1514.72",
+      "high": "1528.10",
+      "low": "1510.60",
+      "close": "1527.85",
+      "volume": 1301195
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 338,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-19",
+      "open": "1527.85",
+      "high": "1546.78",
+      "low": "1523.40",
+      "close": "1539.09",
+      "volume": 2027516
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 339,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-20",
+      "open": "1539.09",
+      "high": "1550.62",
+      "low": "1538.45",
+      "close": "1548.73",
+      "volume": 1059519
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 340,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-21",
+      "open": "1548.73",
+      "high": "1552.60",
+      "low": "1545.03",
+      "close": "1550.13",
+      "volume": 1460504
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 341,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-22",
+      "open": "1550.13",
+      "high": "1557.54",
+      "low": "1531.12",
+      "close": "1533.29",
+      "volume": 2037438
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 342,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-23",
+      "open": "1533.29",
+      "high": "1534.14",
+      "low": "1506.01",
+      "close": "1514.31",
+      "volume": 1477187
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 343,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-24",
+      "open": "1514.31",
+      "high": "1521.09",
+      "low": "1490.40",
+      "close": "1493.61",
+      "volume": 1454116
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 344,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-25",
+      "open": "1493.61",
+      "high": "1503.21",
+      "low": "1471.56",
+      "close": "1473.18",
+      "volume": 1809686
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 345,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-26",
+      "open": "1473.18",
+      "high": "1482.50",
+      "low": "1468.09",
+      "close": "1480.68",
+      "volume": 1201601
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 346,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-27",
+      "open": "1480.68",
+      "high": "1497.32",
+      "low": "1477.78",
+      "close": "1493.92",
+      "volume": 2032757
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 347,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-28",
+      "open": "1493.92",
+      "high": "1499.80",
+      "low": "1487.27",
+      "close": "1497.58",
+      "volume": 844305
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 348,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-29",
+      "open": "1497.58",
+      "high": "1505.76",
+      "low": "1489.14",
+      "close": "1499.17",
+      "volume": 1371833
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 349,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-30",
+      "open": "1499.17",
+      "high": "1500.87",
+      "low": "1480.14",
+      "close": "1487.20",
+      "volume": 2018867
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 350,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-08-31",
+      "open": "1487.20",
+      "high": "1490.50",
+      "low": "1471.86",
+      "close": "1473.72",
+      "volume": 1370615
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 351,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-01",
+      "open": "1473.72",
+      "high": "1476.07",
+      "low": "1469.41",
+      "close": "1475.84",
+      "volume": 1555948
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 352,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-02",
+      "open": "1475.84",
+      "high": "1476.10",
+      "low": "1451.69",
+      "close": "1457.24",
+      "volume": 1401302
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 353,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-03",
+      "open": "1457.24",
+      "high": "1481.04",
+      "low": "1450.51",
+      "close": "1475.42",
+      "volume": 1940519
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 354,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-04",
+      "open": "1475.42",
+      "high": "1486.75",
+      "low": "1469.40",
+      "close": "1485.58",
+      "volume": 1374787
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 355,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-05",
+      "open": "1485.58",
+      "high": "1490.58",
+      "low": "1465.03",
+      "close": "1466.98",
+      "volume": 1430699
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 356,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-06",
+      "open": "1466.98",
+      "high": "1479.16",
+      "low": "1463.41",
+      "close": "1470.20",
+      "volume": 1453647
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 357,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-07",
+      "open": "1470.20",
+      "high": "1491.78",
+      "low": "1461.25",
+      "close": "1485.20",
+      "volume": 1375638
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 358,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-08",
+      "open": "1485.20",
+      "high": "1492.06",
+      "low": "1460.57",
+      "close": "1467.83",
+      "volume": 1500507
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 359,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-09",
+      "open": "1467.83",
+      "high": "1470.06",
+      "low": "1438.97",
+      "close": "1447.94",
+      "volume": 2223317
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 360,
+    "fields": {
+      "ticker": 4,
+      "date": "2025-09-10",
+      "open": "1447.94",
+      "high": "1464.08",
+      "low": "1444.15",
+      "close": "1463.87",
+      "volume": 1995198
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 361,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-13",
+      "open": "880.00",
+      "high": "893.02",
+      "low": "873.82",
+      "close": "892.74",
+      "volume": 3074143
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 362,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-14",
+      "open": "892.74",
+      "high": "894.33",
+      "low": "878.40",
+      "close": "880.76",
+      "volume": 3271958
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 363,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-15",
+      "open": "880.76",
+      "high": "886.84",
+      "low": "878.89",
+      "close": "879.37",
+      "volume": 1581710
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 364,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-16",
+      "open": "879.37",
+      "high": "884.26",
+      "low": "869.86",
+      "close": "871.56",
+      "volume": 2558156
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 365,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-17",
+      "open": "871.56",
+      "high": "889.82",
+      "low": "870.13",
+      "close": "884.43",
+      "volume": 2241218
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 366,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-18",
+      "open": "884.43",
+      "high": "900.24",
+      "low": "882.75",
+      "close": "897.01",
+      "volume": 2756816
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 367,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-19",
+      "open": "897.01",
+      "high": "901.80",
+      "low": "893.08",
+      "close": "893.48",
+      "volume": 1839181
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 368,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-20",
+      "open": "893.48",
+      "high": "909.91",
+      "low": "891.38",
+      "close": "902.70",
+      "volume": 3175591
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 369,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-21",
+      "open": "902.70",
+      "high": "910.06",
+      "low": "899.58",
+      "close": "906.02",
+      "volume": 1892067
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 370,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-22",
+      "open": "906.02",
+      "high": "913.22",
+      "low": "903.97",
+      "close": "909.62",
+      "volume": 2101488
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 371,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-23",
+      "open": "909.62",
+      "high": "915.43",
+      "low": "900.88",
+      "close": "904.41",
+      "volume": 1501184
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 372,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-24",
+      "open": "904.41",
+      "high": "906.62",
+      "low": "891.83",
+      "close": "897.86",
+      "volume": 2126555
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 373,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-25",
+      "open": "897.86",
+      "high": "907.49",
+      "low": "891.14",
+      "close": "907.28",
+      "volume": 2074711
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 374,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-26",
+      "open": "907.28",
+      "high": "913.53",
+      "low": "902.99",
+      "close": "908.46",
+      "volume": 2053368
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 375,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-27",
+      "open": "908.46",
+      "high": "914.41",
+      "low": "906.32",
+      "close": "911.15",
+      "volume": 1758696
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 376,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-28",
+      "open": "911.15",
+      "high": "923.87",
+      "low": "910.23",
+      "close": "919.65",
+      "volume": 2977365
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 377,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-29",
+      "open": "919.65",
+      "high": "926.44",
+      "low": "905.87",
+      "close": "909.50",
+      "volume": 3199434
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 378,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-06-30",
+      "open": "909.50",
+      "high": "911.13",
+      "low": "899.87",
+      "close": "900.70",
+      "volume": 2716268
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 379,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-01",
+      "open": "900.70",
+      "high": "911.23",
+      "low": "899.46",
+      "close": "910.34",
+      "volume": 1981469
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 380,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-02",
+      "open": "910.34",
+      "high": "912.83",
+      "low": "896.68",
+      "close": "899.11",
+      "volume": 3130038
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 381,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-03",
+      "open": "899.11",
+      "high": "899.18",
+      "low": "890.48",
+      "close": "891.94",
+      "volume": 1822999
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 382,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-04",
+      "open": "891.94",
+      "high": "900.65",
+      "low": "891.29",
+      "close": "900.22",
+      "volume": 2351887
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 383,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-05",
+      "open": "900.22",
+      "high": "914.81",
+      "low": "893.14",
+      "close": "910.90",
+      "volume": 3052518
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 384,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-06",
+      "open": "910.90",
+      "high": "915.09",
+      "low": "907.75",
+      "close": "912.03",
+      "volume": 1663997
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 385,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-07",
+      "open": "912.03",
+      "high": "917.62",
+      "low": "895.63",
+      "close": "902.52",
+      "volume": 2134230
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 386,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-08",
+      "open": "902.52",
+      "high": "905.89",
+      "low": "886.56",
+      "close": "891.18",
+      "volume": 2470007
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 387,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-09",
+      "open": "891.18",
+      "high": "898.30",
+      "low": "888.06",
+      "close": "889.52",
+      "volume": 2022490
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 388,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-10",
+      "open": "889.52",
+      "high": "890.09",
+      "low": "880.76",
+      "close": "887.02",
+      "volume": 2138417
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 389,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-11",
+      "open": "887.02",
+      "high": "899.76",
+      "low": "881.00",
+      "close": "899.71",
+      "volume": 2303668
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 390,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-12",
+      "open": "899.71",
+      "high": "900.09",
+      "low": "890.43",
+      "close": "892.18",
+      "volume": 3069992
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 391,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-13",
+      "open": "892.18",
+      "high": "903.52",
+      "low": "888.92",
+      "close": "896.80",
+      "volume": 1659509
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 392,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-14",
+      "open": "896.80",
+      "high": "902.63",
+      "low": "890.91",
+      "close": "901.17",
+      "volume": 1739899
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 393,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-15",
+      "open": "901.17",
+      "high": "913.83",
+      "low": "895.92",
+      "close": "913.79",
+      "volume": 2699743
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 394,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-16",
+      "open": "913.79",
+      "high": "924.31",
+      "low": "912.72",
+      "close": "921.24",
+      "volume": 3055946
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 395,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-17",
+      "open": "921.24",
+      "high": "923.05",
+      "low": "907.56",
+      "close": "909.15",
+      "volume": 2309551
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 396,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-18",
+      "open": "909.15",
+      "high": "915.32",
+      "low": "892.84",
+      "close": "898.19",
+      "volume": 3481346
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 397,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-19",
+      "open": "898.19",
+      "high": "903.35",
+      "low": "886.56",
+      "close": "893.28",
+      "volume": 1788359
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 398,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-20",
+      "open": "893.28",
+      "high": "906.00",
+      "low": "888.60",
+      "close": "900.96",
+      "volume": 3504538
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 399,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-21",
+      "open": "900.96",
+      "high": "904.88",
+      "low": "890.40",
+      "close": "896.04",
+      "volume": 1420374
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 400,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-22",
+      "open": "896.04",
+      "high": "913.81",
+      "low": "890.04",
+      "close": "909.73",
+      "volume": 2344876
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 401,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-23",
+      "open": "909.73",
+      "high": "914.39",
+      "low": "897.71",
+      "close": "899.97",
+      "volume": 3002800
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 402,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-24",
+      "open": "899.97",
+      "high": "903.24",
+      "low": "895.75",
+      "close": "900.58",
+      "volume": 2280118
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 403,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-25",
+      "open": "900.58",
+      "high": "911.34",
+      "low": "899.42",
+      "close": "904.74",
+      "volume": 1581229
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 404,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-26",
+      "open": "904.74",
+      "high": "906.12",
+      "low": "898.14",
+      "close": "905.29",
+      "volume": 1626909
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 405,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-27",
+      "open": "905.29",
+      "high": "914.62",
+      "low": "900.07",
+      "close": "914.05",
+      "volume": 2321012
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 406,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-28",
+      "open": "914.05",
+      "high": "930.93",
+      "low": "911.60",
+      "close": "923.59",
+      "volume": 2758597
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 407,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-29",
+      "open": "923.59",
+      "high": "925.77",
+      "low": "908.15",
+      "close": "912.58",
+      "volume": 2221744
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 408,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-30",
+      "open": "912.58",
+      "high": "929.23",
+      "low": "911.32",
+      "close": "924.48",
+      "volume": 2456296
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 409,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-07-31",
+      "open": "924.48",
+      "high": "929.03",
+      "low": "919.24",
+      "close": "926.54",
+      "volume": 1840447
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 410,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-01",
+      "open": "926.54",
+      "high": "927.08",
+      "low": "918.10",
+      "close": "924.82",
+      "volume": 1600032
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 411,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-02",
+      "open": "924.82",
+      "high": "936.93",
+      "low": "919.72",
+      "close": "932.60",
+      "volume": 2551405
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 412,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-03",
+      "open": "932.60",
+      "high": "952.10",
+      "low": "929.81",
+      "close": "945.39",
+      "volume": 3119195
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 413,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-04",
+      "open": "945.39",
+      "high": "966.36",
+      "low": "938.53",
+      "close": "958.98",
+      "volume": 2978073
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 414,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-05",
+      "open": "958.98",
+      "high": "964.36",
+      "low": "954.49",
+      "close": "959.08",
+      "volume": 2056897
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 415,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-06",
+      "open": "959.08",
+      "high": "960.95",
+      "low": "946.57",
+      "close": "950.52",
+      "volume": 3095952
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 416,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-07",
+      "open": "950.52",
+      "high": "955.05",
+      "low": "943.75",
+      "close": "954.62",
+      "volume": 2154749
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 417,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-08",
+      "open": "954.62",
+      "high": "966.59",
+      "low": "949.71",
+      "close": "964.71",
+      "volume": 3452195
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 418,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-09",
+      "open": "964.71",
+      "high": "965.15",
+      "low": "948.12",
+      "close": "949.88",
+      "volume": 3188008
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 419,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-10",
+      "open": "949.88",
+      "high": "965.88",
+      "low": "943.96",
+      "close": "963.77",
+      "volume": 2729390
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 420,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-11",
+      "open": "963.77",
+      "high": "982.08",
+      "low": "963.62",
+      "close": "974.71",
+      "volume": 2758818
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 421,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-12",
+      "open": "974.71",
+      "high": "974.75",
+      "low": "960.35",
+      "close": "966.91",
+      "volume": 3463251
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 422,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-13",
+      "open": "966.91",
+      "high": "969.64",
+      "low": "944.85",
+      "close": "951.53",
+      "volume": 2123602
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 423,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-14",
+      "open": "951.53",
+      "high": "956.17",
+      "low": "942.69",
+      "close": "946.85",
+      "volume": 1544168
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 424,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-15",
+      "open": "946.85",
+      "high": "963.88",
+      "low": "942.40",
+      "close": "957.45",
+      "volume": 3347524
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 425,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-16",
+      "open": "957.45",
+      "high": "957.93",
+      "low": "939.36",
+      "close": "945.11",
+      "volume": 2370149
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 426,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-17",
+      "open": "945.11",
+      "high": "962.19",
+      "low": "944.43",
+      "close": "957.33",
+      "volume": 2599583
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 427,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-18",
+      "open": "957.33",
+      "high": "968.85",
+      "low": "956.14",
+      "close": "964.36",
+      "volume": 1628359
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 428,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-19",
+      "open": "964.36",
+      "high": "968.17",
+      "low": "960.48",
+      "close": "962.80",
+      "volume": 2167758
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 429,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-20",
+      "open": "962.80",
+      "high": "970.39",
+      "low": "946.09",
+      "close": "948.25",
+      "volume": 3062832
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 430,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-21",
+      "open": "948.25",
+      "high": "958.53",
+      "low": "945.58",
+      "close": "953.25",
+      "volume": 2048184
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 431,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-22",
+      "open": "953.25",
+      "high": "960.62",
+      "low": "937.98",
+      "close": "941.74",
+      "volume": 2402334
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 432,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-23",
+      "open": "941.74",
+      "high": "943.53",
+      "low": "927.91",
+      "close": "931.23",
+      "volume": 2195501
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 433,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-24",
+      "open": "931.23",
+      "high": "937.92",
+      "low": "921.86",
+      "close": "924.14",
+      "volume": 1486064
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 434,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-25",
+      "open": "924.14",
+      "high": "926.69",
+      "low": "905.25",
+      "close": "911.71",
+      "volume": 3434758
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 435,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-26",
+      "open": "911.71",
+      "high": "917.02",
+      "low": "898.77",
+      "close": "904.63",
+      "volume": 1709355
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 436,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-27",
+      "open": "904.63",
+      "high": "914.14",
+      "low": "898.83",
+      "close": "911.07",
+      "volume": 1536312
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 437,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-28",
+      "open": "911.07",
+      "high": "911.31",
+      "low": "898.47",
+      "close": "899.87",
+      "volume": 2957432
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 438,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-29",
+      "open": "899.87",
+      "high": "918.21",
+      "low": "893.04",
+      "close": "913.71",
+      "volume": 3433063
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 439,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-30",
+      "open": "913.71",
+      "high": "932.02",
+      "low": "909.29",
+      "close": "924.88",
+      "volume": 2632027
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 440,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-08-31",
+      "open": "924.88",
+      "high": "932.23",
+      "low": "923.77",
+      "close": "930.93",
+      "volume": 2091399
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 441,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-01",
+      "open": "930.93",
+      "high": "934.83",
+      "low": "921.12",
+      "close": "926.73",
+      "volume": 1835427
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 442,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-02",
+      "open": "926.73",
+      "high": "946.06",
+      "low": "920.66",
+      "close": "939.52",
+      "volume": 2695995
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 443,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-03",
+      "open": "939.52",
+      "high": "941.83",
+      "low": "920.59",
+      "close": "926.59",
+      "volume": 3084736
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 444,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-04",
+      "open": "926.59",
+      "high": "927.01",
+      "low": "916.46",
+      "close": "919.82",
+      "volume": 2285645
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 445,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-05",
+      "open": "919.82",
+      "high": "920.48",
+      "low": "910.98",
+      "close": "915.98",
+      "volume": 1399367
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 446,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-06",
+      "open": "915.98",
+      "high": "926.23",
+      "low": "909.05",
+      "close": "925.83",
+      "volume": 3269884
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 447,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-07",
+      "open": "925.83",
+      "high": "932.56",
+      "low": "920.27",
+      "close": "931.40",
+      "volume": 1508317
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 448,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-08",
+      "open": "931.40",
+      "high": "934.19",
+      "low": "920.53",
+      "close": "921.22",
+      "volume": 2753770
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 449,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-09",
+      "open": "921.22",
+      "high": "942.30",
+      "low": "920.60",
+      "close": "935.67",
+      "volume": 1964815
+    }
+  },
+  {
+    "model": "markets.pricebar",
+    "pk": 450,
+    "fields": {
+      "ticker": 5,
+      "date": "2025-09-10",
+      "open": "935.67",
+      "high": "939.09",
+      "low": "924.86",
+      "close": "926.18",
+      "volume": 2405570
+    }
+  }
+]

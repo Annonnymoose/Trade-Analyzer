@@ -1,0 +1,417 @@
+{% extends 'base_modern.html' %}
+
+{% block title %}Watchlist - Stock Market Analyzer{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="display-6 fw-bold mb-2">My Watchlist</h1>
+                    <p class="text-muted mb-0">Track your favorite stocks and market opportunities</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="{% url 'stocks' %}" class="btn btn-secondary-modern">
+                        <i class="bi bi-plus-circle me-2"></i>Add Stocks
+                    </a>
+                    <a href="{% url 'advanced_trading' %}" class="btn btn-primary-modern">
+                        <i class="bi bi-graph-up me-2"></i>Start Trading
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="row mb-4">
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-primary-light me-3">
+                            <i class="bi bi-star-fill text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">{{ watchlist_items.count }}</h5>
+                            <p class="text-muted mb-0 small">Stocks Watched</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-success-light me-3">
+                            <i class="bi bi-arrow-up text-success"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">{{ gainers_count }}</h5>
+                            <p class="text-muted mb-0 small">Gainers Today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-danger-light me-3">
+                            <i class="bi bi-arrow-down text-danger"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">{{ losers_count }}</h5>
+                            <p class="text-muted mb-0 small">Losers Today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+            <div class="modern-card">
+                <div class="modern-card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-info-light me-3">
+                            <i class="bi bi-clock text-info"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Live</h5>
+                            <p class="text-muted mb-0 small">Market Data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if watchlist_items %}
+    <!-- Watchlist Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-header">
+                    <h5 class="mb-0">Your Watched Stocks</h5>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="refreshPrices()">
+                            <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-secondary-modern dropdown-toggle" 
+                                    type="button" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
+                                Sort by
+                            </button>
+                            <ul class="dropdown-menu modern-card">
+                                <li><a class="dropdown-item" href="?sort=symbol">Symbol</a></li>
+                                <li><a class="dropdown-item" href="?sort=price">Price</a></li>
+                                <li><a class="dropdown-item" href="?sort=change">Change</a></li>
+                                <li><a class="dropdown-item" href="?sort=volume">Volume</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modern-card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="ps-4">Stock</th>
+                                    <th>Price</th>
+                                    <th>Change</th>
+                                    <th>% Change</th>
+                                    <th>Volume</th>
+                                    <th>Added</th>
+                                    <th class="text-end pe-4">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in watchlist_items %}
+                                <tr class="watchlist-row" data-symbol="{{ item.ticker.symbol }}">
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <div class="stock-avatar">
+                                                    {{ item.ticker.symbol|first }}
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">{{ item.ticker.symbol }}</h6>
+                                                <small class="text-muted">{{ item.ticker.name|truncatechars:30 }}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="h6 mb-0 fw-bold">${{ item.ticker.price|floatformat:2 }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="{% if item.ticker.change >= 0 %}text-success{% else %}text-danger{% endif %} fw-bold">
+                                            {% if item.ticker.change >= 0 %}+{% endif %}${{ item.ticker.change|floatformat:2 }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge {% if item.ticker.change_pct >= 0 %}bg-success{% else %}bg-danger{% endif %} fs-7">
+                                            {% if item.ticker.change_pct >= 0 %}+{% endif %}{{ item.ticker.change_pct|floatformat:2 }}%
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">{{ item.ticker.volume|floatformat:0 }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted small">{{ item.added_at|date:"M d, Y" }}</span>
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <div class="btn-group" role="group">
+                                            <a href="{% url 'stock_detail' item.ticker.symbol %}" 
+                                               class="btn btn-sm btn-outline-primary"
+                                               title="View Details">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <a href="{% url 'advanced_trading' %}?symbol={{ item.ticker.symbol }}" 
+                                               class="btn btn-sm btn-outline-success"
+                                               title="Trade">
+                                                <i class="bi bi-graph-up"></i>
+                                            </a>
+                                            <form method="post" 
+                                                  action="{% url 'remove_from_watchlist' item.id %}" 
+                                                  class="d-inline"
+                                                  onsubmit="return confirm('Remove {{ item.ticker.symbol }} from watchlist?')">
+                                                {% csrf_token %}
+                                                <button type="submit" 
+                                                        class="btn btn-sm btn-outline-danger"
+                                                        title="Remove">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-body">
+                    <h6 class="mb-3">Quick Actions</h6>
+                    <div class="row g-3">
+                        <div class="col-md-3 col-sm-6">
+                            <a href="{% url 'screener' %}" class="quick-action-card">
+                                <div class="icon-box bg-primary-light mb-2">
+                                    <i class="bi bi-funnel text-primary"></i>
+                                </div>
+                                <h6 class="mb-1">Stock Screener</h6>
+                                <p class="text-muted small mb-0">Find new opportunities</p>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="{% url 'analytics' %}" class="quick-action-card">
+                                <div class="icon-box bg-info-light mb-2">
+                                    <i class="bi bi-graph-up-arrow text-info"></i>
+                                </div>
+                                <h6 class="mb-1">Analytics</h6>
+                                <p class="text-muted small mb-0">Market insights</p>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="{% url 'portfolio' %}" class="quick-action-card">
+                                <div class="icon-box bg-success-light mb-2">
+                                    <i class="bi bi-briefcase text-success"></i>
+                                </div>
+                                <h6 class="mb-1">Portfolio</h6>
+                                <p class="text-muted small mb-0">Manage holdings</p>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="{% url 'advanced_trading' %}" class="quick-action-card">
+                                <div class="icon-box bg-warning-light mb-2">
+                                    <i class="bi bi-lightning text-warning"></i>
+                                </div>
+                                <h6 class="mb-1">Trading</h6>
+                                <p class="text-muted small mb-0">Execute trades</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <!-- Empty State -->
+    <div class="row">
+        <div class="col-12">
+            <div class="modern-card">
+                <div class="modern-card-body text-center py-5">
+                    <i class="bi bi-star text-muted" style="font-size: 4rem;"></i>
+                    <h3 class="mt-3 mb-2">Your watchlist is empty</h3>
+                    <p class="text-muted mb-4">Start by adding some stocks you want to track</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{% url 'stocks' %}" class="btn btn-primary-modern">
+                            <i class="bi bi-plus-circle me-2"></i>Browse Stocks
+                        </a>
+                        <a href="{% url 'screener' %}" class="btn btn-secondary-modern">
+                            <i class="bi bi-funnel me-2"></i>Use Screener
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.bg-primary-light { background-color: var(--primary-50); }
+.bg-success-light { background-color: var(--success-50); }
+.bg-danger-light { background-color: var(--danger-50); }
+.bg-info-light { background-color: var(--info-50); }
+.bg-warning-light { background-color: var(--warning-50); }
+
+.stock-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.watchlist-row {
+    transition: var(--transition-fast);
+}
+
+.watchlist-row:hover {
+    background-color: var(--primary-25);
+}
+
+.table th {
+    border-bottom: 2px solid var(--gray-200);
+    color: var(--gray-700);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    padding: 1rem 0.75rem;
+}
+
+.table td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.btn-group .btn {
+    border-radius: var(--radius-md);
+    margin-right: 0.25rem;
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
+
+.quick-action-card {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-normal);
+    text-align: center;
+}
+
+.quick-action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-200);
+    color: inherit;
+    text-decoration: none;
+}
+
+.badge.fs-7 {
+    font-size: 0.75rem !important;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    transition: var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .icon-box {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}
+</style>
+
+<script>
+function refreshPrices() {
+    const button = document.querySelector('[onclick="refreshPrices()"]');
+    const icon = button.querySelector('i');
+    
+    // Add spinning animation
+    icon.classList.add('fa-spin', 'bi-arrow-clockwise');
+    button.disabled = true;
+    
+    // Simulate refresh (in real app, this would fetch new data)
+    setTimeout(() => {
+        location.reload();
+    }, 1000);
+}
+
+// Auto-refresh every 30 seconds
+setInterval(() => {
+    if (document.visibilityState === 'visible') {
+        // In a real app, this would update prices via AJAX
+        console.log('Auto-refreshing prices...');
+    }
+}, 30000);
+</script>
+{% endblock %}

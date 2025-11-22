@@ -1,0 +1,72 @@
+[
+  {
+    "model": "markets.ticker",
+    "pk": 1,
+    "fields": {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries Ltd.",
+      "exchange": "NSE",
+      "sector": "Energy",
+      "price": "2876.45",
+      "change_pct": "1.23",
+      "last_updated": "2024-02-09T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 2,
+    "fields": {
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel Ltd.",
+      "exchange": "NSE",
+      "sector": "Steel",
+      "price": "145.75",
+      "change_pct": "-0.85",
+      "last_updated": "2024-02-09T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 3,
+    "fields": {
+      "symbol": "INFY",
+      "name": "Infosys Ltd.",
+      "exchange": "NSE",
+      "sector": "Technology",
+      "price": "1567.80",
+      "change_pct": "0.65",
+      "last_updated": "2024-02-09T10:30:00Z",
+      "is_index": false
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 4,
+    "fields": {
+      "symbol": "NIFTY50",
+      "name": "NIFTY 50 Index",
+      "exchange": "NSE",
+      "sector": "Index",
+      "price": "21600.15",
+      "change_pct": "0.45",
+      "last_updated": "2024-02-09T10:30:00Z",
+      "is_index": true
+    }
+  },
+  {
+    "model": "markets.ticker",
+    "pk": 5,
+    "fields": {
+      "symbol": "SENSEX",
+      "name": "S&P BSE SENSEX",
+      "exchange": "BSE",
+      "sector": "Index",
+      "price": "71200.25",
+      "change_pct": "0.50",
+      "last_updated": "2024-02-09T10:30:00Z",
+      "is_index": true
+    }
+  }
+]

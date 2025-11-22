@@ -1,0 +1,338 @@
+{% extends 'base_modern.html' %}
+
+{% block title %}Stock Market Analyzer - Professional Trading Platform{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Smart Trading Made Simple
+            </h1>
+            <p class="hero-subtitle">
+                Professional-grade stock market analysis, portfolio management, and trading tools. 
+                Make informed investment decisions with real-time data and advanced analytics.
+            </p>
+            {% if not user.is_authenticated %}
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="{% url 'register' %}" class="btn btn-primary-modern btn-lg">
+                    <i class="bi bi-rocket-takeoff"></i>
+                    Get Started Free
+                </a>
+                <a href="{% url 'login' %}" class="btn btn-secondary-modern btn-lg">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    Sign In
+                </a>
+            </div>
+            {% else %}
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="{% url 'dashboard' %}" class="btn btn-primary-modern btn-lg">
+                    <i class="bi bi-speedometer2"></i>
+                    Go to Dashboard
+                </a>
+                <a href="{% url 'advanced_trading' %}" class="btn btn-secondary-modern btn-lg">
+                    <i class="bi bi-currency-exchange"></i>
+                    Start Trading
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Market Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="display-6 fw-bold mb-3">Market Overview</h2>
+                <p class="lead text-muted">Real-time market data and top performers</p>
+            </div>
+        </div>
+
+        <!-- Market Indices -->
+        {% if indices %}
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="modern-card">
+                    <div class="modern-card-header">
+                        <h3 class="modern-card-title">
+                            <i class="bi bi-bar-chart-line text-primary"></i>
+                            Major Indices
+                        </h3>
+                    </div>
+                    <div class="modern-card-body">
+                        <div class="row g-4">
+                            {% for index in indices %}
+                            <div class="col-md-4">
+                                <div class="d-flex justify-content-between align-items-center p-3 border rounded-3">
+                                    <div>
+                                        <h5 class="mb-1 fw-bold">{{ index.symbol }}</h5>
+                                        <small class="text-muted">{{ index.name|truncatechars:20 }}</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="h5 mb-1">${{ index.price|floatformat:2 }}</div>
+                                        <small class="{% if index.change_pct >= 0 %}price-positive{% else %}price-negative{% endif %}">
+                                            {% if index.change_pct >= 0 %}+{% endif %}{{ index.change_pct|floatformat:2 }}%
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Top Movers -->
+        {% if top_movers %}
+        <div class="row">
+            <div class="col-12">
+                <div class="modern-card">
+                    <div class="modern-card-header">
+                        <h3 class="modern-card-title">
+                            <i class="bi bi-trending-up text-success"></i>
+                            Top Movers
+                        </h3>
+                    </div>
+                    <div class="modern-card-body">
+                        <div class="row g-3">
+                            {% for stock in top_movers %}
+                            <div class="col-lg-2 col-md-4 col-sm-6">
+                                <a href="{% url 'stock_detail' stock.symbol %}" class="text-decoration-none">
+                                    <div class="p-3 border rounded-3 h-100 hover-effect">
+                                        <div class="text-center">
+                                            <h6 class="fw-bold mb-2">{{ stock.symbol }}</h6>
+                                            <div class="h6 mb-1">${{ stock.price|floatformat:2 }}</div>
+                                            <span class="badge {% if stock.change_pct >= 0 %}bg-success{% else %}bg-danger{% endif %}">
+                                                {% if stock.change_pct >= 0 %}+{% endif %}{{ stock.change_pct|floatformat:2 }}%
+                                            </span>
+                                            <div class="mt-2">
+                                                <small class="text-muted">Vol: {{ stock.volume|floatformat:0 }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="display-6 fw-bold mb-3">Powerful Features</h2>
+                <p class="lead text-muted">Everything you need for successful trading and investing</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-card h-100">
+                    <div class="modern-card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-speedometer2 text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Real-Time Dashboard</h4>
+                        <p class="text-muted">
+                            Monitor your portfolio performance with live updates, market indices, 
+                            and comprehensive analytics in one unified dashboard.
+                        </p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'dashboard' %}" class="btn btn-primary-modern">
+                            View Dashboard
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-card h-100">
+                    <div class="modern-card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-funnel text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Advanced Screener</h4>
+                        <p class="text-muted">
+                            Filter stocks by price, volume, sector, and performance metrics. 
+                            Find investment opportunities that match your criteria.
+                        </p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'screener' %}" class="btn btn-primary-modern">
+                            Use Screener
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-card h-100">
+                    <div class="modern-card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-graph-up text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Portfolio Analytics</h4>
+                        <p class="text-muted">
+                            Track performance with detailed charts, sector allocation analysis, 
+                            and comprehensive return metrics.
+                        </p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'analytics' %}" class="btn btn-primary-modern">
+                            View Analytics
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-card h-100">
+                    <div class="modern-card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-currency-exchange text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Advanced Trading</h4>
+                        <p class="text-muted">
+                            Execute trades with professional-grade tools including multiple order types, 
+                            real-time charts, and order management.
+                        </p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'advanced_trading' %}" class="btn btn-primary-modern">
+                            Start Trading
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-card h-100">
+                    <div class="modern-card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-star text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Smart Watchlists</h4>
+                        <p class="text-muted">
+                            Create and manage custom watchlists with real-time price alerts 
+                            and performance tracking for your favorite stocks.
+                        </p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'watchlist' %}" class="btn btn-primary-modern">
+                            Manage Watchlist
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-card h-100">
+                    <div class="modern-card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-shield-check text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Secure Platform</h4>
+                        <p class="text-muted">
+                            Your data and transactions are protected with bank-level security, 
+                            encrypted connections, and secure authentication.
+                        </p>
+                        <div class="btn btn-secondary-modern disabled">
+                            Enterprise Security
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+{% if not user.is_authenticated %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="modern-card">
+                    <div class="modern-card-body text-center py-5">
+                        <h2 class="display-6 fw-bold mb-3">Ready to Start Trading?</h2>
+                        <p class="lead text-muted mb-4">
+                            Join thousands of traders who trust our platform for their investment needs. 
+                            Get started with a free account today.
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="{% url 'register' %}" class="btn btn-primary-modern btn-lg">
+                                <i class="bi bi-person-plus"></i>
+                                Create Free Account
+                            </a>
+                            <a href="{% url 'stocks' %}" class="btn btn-secondary-modern btn-lg">
+                                <i class="bi bi-eye"></i>
+                                Explore Markets
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Statistics -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Stocks Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Market Monitoring</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">99.9%</div>
+                <div class="stat-label">Uptime Guarantee</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">Real-Time</div>
+                <div class="stat-label">Data Updates</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.hover-effect {
+    transition: var(--transition-normal);
+}
+
+.hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+}
+</style>
+{% endblock %}
